@@ -14,14 +14,14 @@
         .ai-gradient { background: linear-gradient(135deg, #70a1d7 0%, #3b82f6 100%); }
         html { scroll-behavior: smooth; }
 
-        /* Floating Animation */
+        /* Floating Animation - Subtle */
         @keyframes float {
-            0%, 100% { transform: translateY(0px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
-            50% { transform: translateY(-10px); box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.3); }
+            0%, 100% { transform: translateY(0px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+            50% { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15); }
         }
         
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
+        .animate-float-subtle {
+            animation: float 8s ease-in-out infinite;
         }
 
         /* Glass Shine Effect */
@@ -111,35 +111,80 @@
         <p class="text-slate-500 mb-12">Our custom data engine collects your logs, and we deliver a clear, actionable summary report regularly.</p>
     </div>
     
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         
-        <div class="relative rounded-2xl shadow-2xl animate-float group overflow-hidden">
-            
-            <div class="absolute inset-0 z-10 pointer-events-none glass-shine opacity-20"></div>
-
-            <img src="SummaryReport.png" 
-                 alt="OpsDBA Summary Dashboard Report" 
-                 class="w-full h-auto object-cover transition-transform duration-700 ease-in-out group-hover:scale-[1.02]">
-                 
-            <div class="absolute bottom-6 right-6 bg-white/95 backdrop-blur shadow-xl border border-slate-100 px-4 py-3 rounded-xl flex items-center gap-3 z-20">
-                <div class="bg-green-50 text-green-600 p-2 rounded-lg relative">
-                    <span class="absolute top-0 right-0 -mt-1 -mr-1 flex h-2 w-2">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                    </span>
-                    
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                </div>
+        <div class="md:col-span-2 group relative rounded-2xl border border-slate-200 bg-white shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col">
+            <div class="p-6 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
                 <div>
-                    <div class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Status</div>
-                    <div class="text-sm font-bold text-slate-900">Weekly Report Sent</div>
+                    <h3 class="text-lg font-bold text-slate-900">Executive Summary</h3>
+                    <p class="text-xs text-slate-500">Daily/Weekly health status delivered to your inbox.</p>
                 </div>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-blue-50 text-blue-700 border border-blue-100">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                    </span>
+                    Live Dashboard
+                </span>
+            </div>
+            
+            <div class="relative bg-slate-100 flex-grow group-hover:bg-slate-50 transition-colors duration-500">
+                 <img src="SummaryReport.png" 
+                     alt="OpsDBA Summary Dashboard Report" 
+                     class="w-full h-full object-cover object-top transition-transform duration-700 ease-in-out group-hover:scale-[1.01]">
+                <div class="absolute inset-0 pointer-events-none glass-shine opacity-10"></div>
+            </div>
+
+            <div class="p-4 bg-white border-t border-slate-100">
+                 <a href="#how-it-works" class="text-sm font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1">
+                    See how we generate this report <span aria-hidden="true">&rarr;</span>
+                </a>
             </div>
         </div>
-        
-        <div class="mx-auto w-[90%] h-4 bg-black/20 blur-xl rounded-[100%] mt-12 transition-all duration-[6000ms] animate-pulse opacity-20"></div>
+
+        <div class="group relative rounded-2xl border border-slate-200 bg-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col">
+            <div class="p-6 border-b border-slate-100 bg-slate-50/50">
+                 <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                    </svg>
+                    Real-Time Alerts
+                </h3>
+                 <p class="text-xs text-slate-500 mt-1">Instant notification on critical failure.</p>
+            </div>
+            <div class="relative bg-red-50/30 flex-grow aspect-[4/3] overflow-hidden">
+                <img src="Alert.png" 
+                     alt="OpsDBA Critical Alert Example" 
+                     class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+            </div>
+            <div class="p-4 bg-white border-t border-slate-100">
+                <a href="#pricing" class="text-sm font-bold text-slate-600 hover:text-slate-900 flex items-center gap-1">
+                    Check SLA Response Times <span aria-hidden="true">&rarr;</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="group relative rounded-2xl border border-slate-200 bg-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col">
+            <div class="p-6 border-b border-slate-100 bg-slate-50/50">
+                 <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-500" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                    Verified Insights
+                </h3>
+                 <p class="text-xs text-slate-500 mt-1">AI findings validated by human experts.</p>
+            </div>
+            <div class="relative bg-emerald-50/30 flex-grow aspect-[4/3] overflow-hidden">
+                <img src="Insights.png" 
+                     alt="OpsDBA Verified Insight Example" 
+                     class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+            </div>
+             <div class="p-4 bg-white border-t border-slate-100">
+                <a href="ScheduleMeeting.html" class="text-sm font-bold text-slate-600 hover:text-slate-900 flex items-center gap-1">
+                    Get a Free Assessment <span aria-hidden="true">&rarr;</span>
+                </a>
+            </div>
+        </div>
 
     </div>
 </section>
