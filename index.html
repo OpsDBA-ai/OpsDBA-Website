@@ -108,51 +108,38 @@
 <section id="SummaryReport" class="pb-16 px-6 bg-white overflow-hidden">
     <div class="mt-8 max-w-4xl mx-auto text-center">
         <h2 class="text-3xl font-bold text-slate-900 mb-4">We Watch Your Database So You Don't Have To</h2>
-        <p class="text-slate-500 mb-8">Our custom data engine collects your logs, and we deliver a clear, actionable summary report regularly.</p>
+        <p class="text-slate-500 mb-12">Our custom data engine collects your logs, and we deliver a clear, actionable summary report regularly.</p>
     </div>
     
-    <div class="max-w-3xl mx-auto">
+    <div class="max-w-5xl mx-auto">
         
-        <div class="relative rounded-xl border border-slate-200 bg-slate-50 shadow-2xl animate-float ring-1 ring-slate-900/5">
+        <div class="relative rounded-2xl shadow-2xl animate-float group overflow-hidden border border-slate-100 bg-white">
             
-            <div class="border-b border-slate-200 bg-white/50 backdrop-blur px-4 py-3 flex items-center gap-2 rounded-t-xl">
-                <div class="flex gap-1.5">
-                    <div class="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
-                    <div class="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
-                    <div class="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
-                </div>
-                <div class="mx-auto bg-slate-100 text-[10px] text-slate-400 px-6 py-1 rounded-full font-mono tracking-tight shadow-inner">
-                    opsdba.ai/reports/client-summary
-                </div>
-            </div>
+            <div class="absolute inset-0 z-10 pointer-events-none glass-shine opacity-20"></div>
 
-            <div class="relative aspect-video bg-slate-100 flex items-center justify-center overflow-hidden rounded-b-xl group">
-                <div class="absolute inset-0 z-10 pointer-events-none glass-shine opacity-20"></div>
-
-                <img src="SummaryReport.png" 
-                     alt="OpsDBA Summary Dashboard Report" 
-                     class="w-full h-full object-cover object-top transition-transform duration-700 ease-in-out group-hover:scale-105">
-                     
-                <div class="absolute bottom-4 right-4 bg-white/95 backdrop-blur shadow-lg border border-slate-100 px-3 py-2 rounded-lg flex items-center gap-3 z-20">
-                    <div class="bg-green-50 text-green-600 p-1.5 rounded-md relative">
-                        <span class="absolute top-0 right-0 -mt-1 -mr-1 flex h-2 w-2">
-                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                          <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                        </span>
-                        
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <div>
-                        <div class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Status</div>
-                        <div class="text-xs font-bold text-slate-900">Weekly Report Sent</div>
-                    </div>
+            <img src="SummaryReport.png" 
+                 alt="OpsDBA Summary Dashboard Report" 
+                 class="w-full h-auto object-cover transition-transform duration-700 ease-in-out group-hover:scale-[1.02]">
+                 
+            <div class="absolute bottom-6 right-6 bg-white/95 backdrop-blur shadow-xl border border-slate-100 px-4 py-3 rounded-xl flex items-center gap-3 z-20">
+                <div class="bg-green-50 text-green-600 p-2 rounded-lg relative">
+                    <span class="absolute top-0 right-0 -mt-1 -mr-1 flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                    </span>
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <div>
+                    <div class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Status</div>
+                    <div class="text-sm font-bold text-slate-900">Weekly Report Sent</div>
                 </div>
             </div>
         </div>
         
-        <div class="mx-auto w-[90%] h-4 bg-black/20 blur-xl rounded-[100%] mt-8 transition-all duration-[6000ms] animate-pulse opacity-20"></div>
+        <div class="mx-auto w-[90%] h-4 bg-black/20 blur-xl rounded-[100%] mt-12 transition-all duration-[6000ms] animate-pulse opacity-20"></div>
 
     </div>
 </section>
