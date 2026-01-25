@@ -223,7 +223,8 @@
                  <p class="text-xs text-slate-500 mt-1">Instant notification on critical failure.</p>
             </div>
             
-            <div class="relative bg-red-50/30 flex-grow p-4 flex items-center justify-center">
+            <div class="relative bg-red-50/30 flex-grow p-4 flex flex-col items-center justify-center gap-3">
+                
                 <div class="relative p-4 bg-white rounded-xl border border-red-100 shadow-xl w-full transition-transform duration-300">
                     <div class="absolute -top-3 -right-3">
                         <span class="flex h-3 w-3 absolute -right-1 -top-1">
@@ -243,13 +244,37 @@
                     </div>
                     
                     <div class="font-sans text-[10px] text-slate-600 leading-relaxed">
-                        <p class="mb-2">Alert detected on <strong>SQL-FIN-01</strong> at <strong>02:14:05 AM</strong>.</p>
+                        <p class="mb-2">Alert detected on <strong>SQL03</strong> at <strong>02:14:05 AM</strong>.</p>
                         <div class="bg-red-50 border-l-2 border-red-500 p-2 rounded-r-md">
                             <strong class="text-red-900 block mb-0.5">SQL AGENT STOPPED</strong>
                             <p class="text-red-800">Automated restart attempted. OpsDBA team notified.</p>
                         </div>
                     </div>
                 </div>
+
+                <div class="relative p-4 bg-white rounded-xl border border-red-100 shadow-xl w-full transition-transform duration-300">
+                    <div class="absolute -top-3 -right-3">
+                         <span class="text-[8px] bg-red-100 text-red-700 px-2 py-0.5 rounded-full font-bold shadow-sm border border-red-200">CRITICAL</span>
+                    </div>
+                    
+                    <div class="flex items-center gap-2 mb-2 border-b border-red-50 pb-2">
+                        <div class="bg-red-100 p-1 rounded-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-red-600" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <span class="text-[10px] text-slate-900 font-bold">OpsDBA Monitor</span>
+                    </div>
+                    
+                    <div class="font-sans text-[10px] text-slate-600 leading-relaxed">
+                        <p class="mb-2">Alert detected on <strong>SQL07</strong> at <strong>02:15:20 AM</strong>.</p>
+                        <div class="bg-red-50 border-l-2 border-red-500 p-2 rounded-r-md">
+                            <strong class="text-red-900 block mb-0.5">SERVER UNREACHABLE</strong>
+                            <p class="text-red-800">OpsDBA Team notified.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -278,7 +303,7 @@
                     </div>
                     
                     <div class="font-sans text-[10px] text-slate-600 leading-relaxed">
-                        <p class="mb-2">Confirmed <strong>Error 823</strong> on F:\.</p>
+                        <p class="mb-2">We reviewed the AI-processed logs. We have a confirmed <strong>Critical I/O Subsystem Failure (Error 823)</strong> on drive F:\.</p>
                         <div class="bg-blue-50 border-l-2 border-blue-500 p-2 rounded-r-md">
                             <strong class="text-blue-900 block mb-0.5">ACTION PLAN:</strong>
                             <p class="text-blue-800">We recommend contacting your storage vendor or internal sys admins responsible for storage immediately.</p>
