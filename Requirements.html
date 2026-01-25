@@ -18,26 +18,26 @@
         html { scroll-behavior: smooth; }
     </style>
 </head>
-<body>
+<body class="bg-white text-slate-900">
 
 <div class="bg-slate-900 text-slate-300 py-2 px-6 text-xs font-medium border-b border-slate-800 relative z-[60]">
-    <div class="max-w-6xl mx-auto flex justify-center md:justify-end gap-6">
-        <a href="index.html" class="hover:text-white transition-colors">&larr; Back to Main Site</a>
+    <div class="max-w-6xl mx-auto flex justify-center md:justify-end gap-6 text-center">
+        <a href="index.html" class="text-white hover:text-blue-400 transition-colors">&larr; Back to OpsDBA Main Site</a>
     </div>
 </div>
 
 <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 py-4 px-6">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
-        <a href="index.html" class="flex items-center gap-1">
+        <a href="index.html" class="flex items-center gap-1 hover:opacity-90 transition">
             <span class="text-3xl font-extrabold tracking-tighter text-slate-900">OpsDBA<span class="text-blue-600">.ai</span></span>
-            <span class="ml-2 px-2 py-0.5 rounded-md bg-slate-100 text-slate-500 text-xs font-bold uppercase tracking-wider border border-slate-200">Requirements</span>
+            <span class="ml-2 px-2 py-0.5 rounded-md bg-slate-100 text-slate-500 text-[10px] font-bold uppercase tracking-wider border border-slate-200">Requirements</span>
         </a>
         <div class="hidden md:flex items-center gap-8">
             <a href="#core" class="text-sm font-semibold text-slate-600 hover:text-blue-600">Infrastructure</a>
             <a href="#security" class="text-sm font-semibold text-slate-600 hover:text-blue-600">Security</a>
             <a href="#ai" class="text-sm font-semibold text-slate-600 hover:text-blue-600">AI Models</a>
         </div>
-        <a href="ScheduleMeeting.html" class="bg-blue-600 text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wide hover:bg-blue-700 transition">Schedule Meeting</a>
+        <a href="ScheduleMeeting.html" class="bg-slate-900 text-white px-5 py-2 rounded-full text-xs font-bold hover:bg-blue-600 transition tracking-wide uppercase">Schedule Meeting</a>
     </div>
 </nav>
 
@@ -46,7 +46,7 @@
         <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight leading-[1.1]">
             Technical <span class="text-transparent bg-clip-text ai-gradient">Prerequisites</span>
         </h1>
-        <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed font-medium">
             OpsDBA is designed to be agentless and non-intrusive. We leverage native SQL Server features to minimize impact on your production environment.
         </p>
     </div>
@@ -58,10 +58,11 @@
             <div class="p-8 rounded-2xl border border-slate-100 bg-slate-50 hover:shadow-md transition-shadow">
                 <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-6 font-bold text-xl">SQL</div>
                 <h3 class="text-xl font-bold text-slate-900 mb-2">SQL Server 2016 - 2022</h3>
-                <p class="text-sm text-slate-600 leading-relaxed mb-4">Compatible with SQL Server 2016 (SP2) and newer. We utilize modern Dynamic Management Views (DMVs) for non-blocking performance diagnostics.</p>
+                <p class="text-sm text-slate-600 leading-relaxed mb-4">Compatible with Standard and Enterprise editions. We support both <strong>Default and Named Instances</strong> with dynamic performance counter resolution.</p>
                 <div class="flex flex-wrap gap-2">
                     <span class="px-2 py-1 bg-green-100 text-green-700 text-[10px] font-bold uppercase rounded">Standard</span>
                     <span class="px-2 py-1 bg-green-100 text-green-700 text-[10px] font-bold uppercase rounded">Enterprise</span>
+                    <span class="px-2 py-1 bg-blue-100 text-blue-700 text-[10px] font-bold uppercase rounded">Named Instances</span>
                 </div>
             </div>
 
@@ -70,8 +71,8 @@
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                 </div>
                 <h3 class="text-xl font-bold text-slate-900 mb-2">Database Mail</h3>
-                <p class="text-sm text-slate-600 leading-relaxed mb-4">Database Mail is <strong>required</strong> on all monitored SQL Servers. We deploy custom SQL Server Alerts to each instance that utilize the <strong>OpsDBA Operator</strong> for instant, real-time alert notifications.</p>
-                <p class="text-xs text-slate-500 italic">Recommendation: Use a dedicated O365 or SendGrid SMTP relay.</p>
+                <p class="text-sm text-slate-600 leading-relaxed mb-4">Database Mail is <strong>required</strong> for real-time alerts. We utilize the <code>msdb</code> alerting engine to trigger the <strong>OpsDBA Responder</strong> for zero-latency notification.</p>
+                <p class="text-[10px] text-slate-500 italic">Note: Required for InstantAlerts delivery.</p>
             </div>
 
             <div class="p-8 rounded-2xl border-2 border-dashed border-emerald-200 bg-emerald-50/30">
@@ -79,7 +80,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 </div>
                 <h3 class="text-xl font-bold text-slate-900 mb-2">No OS Agents</h3>
-                <p class="text-sm text-slate-600 leading-relaxed">OpsDBA requires <strong>zero</strong> Windows-level agents or third-party executables. No reboots required for installation or maintenance.</p>
+                <p class="text-sm text-slate-600 leading-relaxed">OpsDBA is 100% T-SQL based. We require <strong>zero</strong> Windows-level agents, third-party executables, or service reboots for installation.</p>
             </div>
 
             <div class="p-8 rounded-2xl border border-slate-100 bg-slate-50 hover:shadow-md transition-shadow">
@@ -87,7 +88,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
                 </div>
                 <h3 class="text-xl font-bold text-slate-900 mb-2">Mixed Mode Auth</h3>
-                <p class="text-sm text-slate-600 leading-relaxed">Required for Master-to-Client communication. We use a secure, low-privilege SQL Login to bridge connections across disparate domains or cloud providers.</p>
+                <p class="text-sm text-slate-600 leading-relaxed">Required for cross-domain Master-to-Client communication. We use a secure, low-privilege SQL Login with strictly defined read-only permissions.</p>
             </div>
         </div>
     </div>
@@ -96,38 +97,36 @@
 <section id="security" class="py-20 px-6 bg-slate-50 border-y border-slate-200">
     <div class="max-w-4xl mx-auto">
         <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-slate-900 mb-4">Security by Redaction</h2>
-            <p class="text-slate-600">We sanitize your data <em>before</em> it ever leaves your Master Server.</p>
+            <h2 class="text-3xl font-bold text-slate-900 mb-4 tracking-tight">Security by Redaction</h2>
+            <p class="text-slate-600">We sanitize your technical data <em>locally</em> before it ever leaves your Master Server.</p>
         </div>
         
         <div class="bg-white p-8 md:p-12 rounded-3xl border border-slate-200 shadow-xl">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                     <h3 class="text-2xl font-bold text-slate-900 mb-4">Edge-Side Redaction</h3>
-                    <p class="text-slate-600 leading-relaxed mb-6">
-                        Our logic identifies sensitive environment metadata locally. Before sending a log to an LLM provider for diagnosis, we scrub:
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Before sending a log for AI-enhanced diagnosis, our logic scrubs sensitive metadata:
                     </p>
                     <ul class="space-y-3">
-                        <li class="flex items-center gap-3 text-sm text-slate-700 font-medium">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span> Public & Private IP Addresses
+                        <li class="flex items-center gap-3 text-xs text-slate-700 font-bold">
+                            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span> IP Addresses (Public & Private)
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-slate-700 font-medium">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span> Usernames, Email Addresses & File Paths
+                        <li class="flex items-center gap-3 text-xs text-slate-700 font-bold">
+                            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span> File Paths & User Accounts
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-slate-700 font-medium">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span> Server, Instance & Database Names
+                        <li class="flex items-center gap-3 text-xs text-slate-700 font-bold">
+                            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span> Server & Database Names
                         </li>
                     </ul>
                 </div>
-                <div class="bg-slate-900 rounded-2xl p-6 font-mono text-[11px] leading-relaxed text-slate-400 overflow-hidden shadow-2xl relative group">
-                    <div class="absolute top-3 right-4 text-[9px] text-slate-600 font-bold uppercase tracking-widest">Local Redaction Logic</div>
+                <div class="bg-slate-900 rounded-2xl p-6 font-mono text-[10px] leading-relaxed text-slate-400 overflow-hidden shadow-2xl relative">
+                    <div class="absolute top-3 right-4 text-[8px] text-slate-600 font-bold uppercase tracking-widest">Local Redaction Active</div>
                     <div class="space-y-1">
-                        <p class="text-slate-500 italic"># Processing Log Stream...</p>
+                        <p class="text-slate-500 italic"># Scrubbing Log Stream...</p>
                         <p><span class="text-red-400">-</span> Login failed for '<strong>CORP\CKlessig</strong>' on '<strong>SQL-PROD-01</strong>'</p>
-                        <p><span class="text-red-400">-</span> Source IP: <strong>10.0.4.152</strong></p>
                         <div class="my-3 border-t border-slate-800"></div>
                         <p><span class="text-emerald-400">+</span> Login failed for '<strong>[USER_REDACTED]</strong>' on '<strong>[SERVER_REDACTED]</strong>'</p>
-                        <p><span class="text-emerald-400">+</span> Source IP: <strong>[IP_REDACTED]</strong></p>
                     </div>
                 </div>
             </div>
@@ -136,86 +135,46 @@
 </section>
 
 <section id="ai" class="py-24 px-6 bg-slate-900 text-white relative">
-    <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-20">
-            <span class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-2 block">Optional Feature</span>
-            <h2 class="text-3xl md:text-5xl font-bold mb-6">Supported AI Models</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">
-                AI engines are disabled by default. If enabled, the <strong>Master Server</strong> requires outbound HTTPS access to your provider and a <strong>valid API key</strong> is required for authentication.
-            </p>
-        </div>
+    <div class="max-w-6xl mx-auto text-center">
+        <span class="text-blue-400 font-bold text-[10px] uppercase tracking-widest mb-2 block">Optional Logic</span>
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">Supported AI Models</h2>
+        <p class="text-slate-400 max-w-2xl mx-auto mb-20 text-sm">
+            AI features are disabled by default. If enabled, the <strong>Master Server</strong> requires outbound HTTPS access to your provider API endpoint.
+        </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bg-white/5 p-6 rounded-2xl border-2 border-blue-500 relative transition-all shadow-lg shadow-blue-500/20">
-                <div class="absolute -top-3 left-6 bg-blue-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Recommended</div>
-                <h4 class="text-blue-400 font-bold mb-2 flex items-center gap-2">Google Gemini</h4>
-                <p class="text-xs text-slate-400 leading-relaxed mb-4">Our primary LLM recommendation following the <strong>Dec 2025 update</strong>. Supports <strong>Gemini 1.5 Pro & Flash</strong> with a massive 2M token window for deep log history.</p>
-                <div class="p-3 bg-blue-500/10 rounded-lg border border-blue-500/20">
-                    <p class="text-[10px] text-blue-200 leading-tight">
-                        <strong>Free Tier:</strong> Includes a <strong>generous free API tier</strong>—perfect for daily SQL error analysis at zero cost.
-                    </p>
-                </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+            <div class="bg-white/5 p-6 rounded-2xl border-2 border-blue-500 shadow-lg shadow-blue-500/10">
+                <h4 class="text-blue-400 font-bold mb-2">Google Gemini</h4>
+                <p class="text-[11px] text-slate-400 leading-relaxed">Our primary recommendation. Supports <strong>Gemini 1.5 Pro</strong> with a massive token window for deep log history analysis.</p>
             </div>
 
-            <div class="bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-emerald-500/50 transition-all">
+            <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
                 <h4 class="text-emerald-400 font-bold mb-2">OpenAI</h4>
-                <p class="text-xs text-slate-400 leading-relaxed mb-4">The industry standard for high-precision logic and multi-step troubleshooting. Connects to the latest <strong>GPT-4o</strong> models.</p>
-                <p class="text-[10px] text-slate-500 font-semibold uppercase tracking-wider">Requires: Valid API Key</p>
+                <p class="text-[11px] text-slate-400 leading-relaxed">Standard high-precision troubleshooting. Supports the latest <strong>GPT-4o</strong> models via standard API.</p>
             </div>
 
-            <div class="bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-sky-500/50 transition-all">
+            <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
                 <h4 class="text-sky-400 font-bold mb-2">Microsoft Copilot</h4>
-                <p class="text-xs text-slate-400 leading-relaxed mb-4">Enterprise-grade compliance. Access OpenAI LLMs through your private <strong>Azure OpenAI Service</strong> tenant for enhanced data residency.</p>
-                <p class="text-[10px] text-slate-500 font-semibold uppercase tracking-wider">Best for: HIPAA/SOC2</p>
+                <p class="text-[11px] text-slate-400 leading-relaxed">Enterprise compliance. Access LLMs through your private <strong>Azure OpenAI Service</strong> tenant.</p>
             </div>
 
-            <div class="bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-orange-500/50 transition-all">
+            <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
                 <h4 class="text-orange-400 font-bold mb-2">Ollama</h4>
-                <p class="text-xs text-slate-400 leading-relaxed mb-4">The air-gapped solution. Run local LLMs like <strong>Llama 3</strong> or Mistral directly on your server. No data ever leaves your network.</p>
-                <p class="text-[10px] text-slate-500 font-semibold uppercase tracking-wider">No API Key Required</p>
+                <p class="text-[11px] text-slate-400 leading-relaxed">The air-gapped solution. Run local models like <strong>Llama 3</strong> directly on your server hardware.</p>
             </div>
         </div>
     </div>
 </section>
 
-<footer class="bg-slate-900 text-slate-300 py-12 px-6 border-t border-slate-800">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
-        <div class="md:col-span-2">
-            <a href="index.html" class="flex items-center gap-1 mb-4">
-                <span class="text-2xl font-extrabold tracking-tighter text-white">OpsDBA<span class="text-blue-500">.ai</span></span>
-            </a>
-            <p class="text-slate-400 text-sm leading-relaxed max-w-md mb-6">
-                Proactive SQL Server DBA Support enhanced with next-gen AI agents. We prevent downtime before it happens.
-            </p>
-            <div class="flex flex-col gap-1">
-                <div class="flex items-center gap-2">
-                    <span class="text-slate-500 text-xs">&copy; 2026 OpsDBA.ai LLC.</span>
-                </div>
-                 <div class="flex items-center gap-2 mt-2">
-                    <div class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></div>
-                    <span class="text-sm font-bold text-white uppercase tracking-widest">Corey Klessig, Principal SQL Server DBA</span>
-                </div>
-            </div>
-        </div>
+<div id="shared-footer"></div>
 
-        <div class="md:col-span-1 pt-2">
-            <ul class="space-y-4">
-                <li><a href="Partners.html" class="text-sm font-medium text-slate-400 hover:text-white transition block py-1">Are you a DBA?</a></li>
-                <li><a href="Partners.html" class="text-sm font-medium text-slate-400 hover:text-white transition block py-1">Are you a Service Provider?</a></li>
-                <li><a href="Requirements.html" class="text-sm font-medium text-slate-400 hover:text-white transition block py-1">Technical Requirements</a></li>
-            </ul>
-        </div>
-
-        <div class="md:col-span-1 md:text-right pt-2">
-            <a href="mailto:support@opsdba.ai" class="text-sm font-bold text-white hover:text-blue-400 transition block mb-1">support@opsdba.ai</a>
-            <a href="tel:+15122858501" class="text-sm font-medium text-slate-400 hover:text-white transition block mb-2">+1 (512) 285-8501</a>
-            <p class="text-xs text-slate-500 leading-relaxed mt-4">
-                5900 Balcones Drive # 21158<br>
-                Austin, TX 78731
-            </p>
-        </div>
-    </div>
-</footer>
+<script>
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('shared-footer').innerHTML = data;
+        });
+</script>
 
 </body>
 </html>
