@@ -13,7 +13,7 @@
     <meta property="og:url" content="https://opsdba.ai/index.html">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="avatar.png?v=1">
     
     <style>
@@ -68,7 +68,7 @@
     </div>
 </nav>
 
-<header class="pt-20 pb-20 px-6 bg-white text-center relative overflow-hidden">
+<header class="pt-20 pb-12 px-6 bg-white text-center relative overflow-hidden">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -z-10"></div>
 
     <div class="max-w-5xl mx-auto">
@@ -90,12 +90,14 @@
                 Get the stability of a dedicated DBA without the expense of a full-time hire. 
                 Our OpsDBA.ai engine spots the issues, and our human experts resolve them 24/7.
             </p>
-            <p class="text-slate-500 leading-relaxed">
-                You don't need another monitoring tool. You need an expert team who knows how to interpret the data. We use AI to separate the signal from the noise.
-            </p>
+            <div class="p-6 bg-blue-50/50 rounded-2xl border border-blue-100 text-left max-w-2xl mx-auto mt-8">
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    <strong class="text-blue-700">Real-Time Engine Awareness:</strong> Our service includes the <a href="InstantAlerts.html" class="text-blue-600 font-bold hover:underline">InstantAlerts Catalog</a>—a suite of precision-tuned monitors for <strong>IO Stalls, CPU Pressure, and Data Integrity</strong>. We hook into the internal SQL exception handler to catch failures standard tools miss.
+                </p>
+            </div>
         </div>
 
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
              <a href="ScheduleMeeting.html" class="bg-slate-900 text-white px-8 py-4 rounded-full text-sm font-bold hover:bg-blue-600 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1">
                 Schedule Meeting
             </a>
@@ -113,6 +115,7 @@
     </div>
     
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
+        
         <div class="md:col-span-2 group relative rounded-2xl border border-slate-200 bg-white shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col">
             <div class="p-6 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
                 <div>
@@ -120,10 +123,14 @@
                     <p class="text-xs text-slate-500">Delivered to your inbox on your custom schedule.</p>
                 </div>
             </div>
+            
             <div class="relative bg-slate-50 flex-grow p-4 md:p-6 flex items-center justify-center">
                  <div class="w-full bg-white rounded shadow-sm border border-slate-300 overflow-hidden transition-transform duration-300 group-hover:scale-[1.01]">
+                    
                     <div class="px-5 pt-5 pb-2 bg-white flex justify-between items-end border-b-4 border-blue-500">
-                        <div class="text-xl font-bold text-slate-900 tracking-tight">OpsDBA<span class="text-blue-600">.ai</span></div>
+                        <div class="text-xl font-bold text-slate-900 tracking-tight">
+                            OpsDBA<span class="text-blue-600">.ai</span>
+                        </div>
                         <div class="text-right">
                              <div class="flex items-center justify-end gap-1.5 mb-0.5">
                                 <div class="h-1.5 w-1.5 bg-red-500 rounded-full"></div>
@@ -132,6 +139,7 @@
                             <div class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">DBA SUMMARY REPORT</div>
                         </div>
                     </div>
+
                     <div class="grid grid-cols-4 divide-x divide-slate-200 border-b border-slate-200 bg-white">
                         <div class="py-2 text-center">
                             <div class="text-lg font-bold text-slate-900">2</div>
@@ -150,22 +158,59 @@
                             <div class="text-[8px] font-bold text-slate-400 uppercase tracking-widest">Failed Jobs</div>
                         </div>
                     </div>
+
                     <div class="p-3">
                         <div class="bg-blue-50 border-l-4 border-blue-600 px-2 py-1 mb-2">
                             <h4 class="text-blue-900 font-bold text-[9px] uppercase tracking-wide">Critical Findings</h4>
                         </div>
+
                         <div class="overflow-hidden border border-slate-100 rounded-sm">
                             <table class="w-full text-left text-[9px]">
+                                <thead class="bg-slate-50 text-slate-500 font-bold border-b border-slate-200">
+                                    <tr>
+                                        <th class="py-1.5 px-2">SERVER</th>
+                                        <th class="py-1.5 px-2">PRI</th>
+                                        <th class="py-1.5 px-2">FINDING</th>
+                                        <th class="py-1.5 px-2 hidden sm:table-cell">DB</th>
+                                        <th class="py-1.5 px-2 hidden sm:table-cell">DETAILS</th>
+                                    </tr>
+                                </thead>
                                 <tbody class="divide-y divide-slate-100">
                                     <tr class="bg-red-50/30">
                                         <td class="py-1.5 px-2 font-medium text-slate-700 border-l-4 border-red-500">SQL01</td>
+                                        <td class="py-1.5 px-2"><span class="bg-red-500 text-white px-1 py-0.5 rounded-full font-bold text-[8px]">1</span></td>
                                         <td class="py-1.5 px-2 font-bold text-slate-800">Backups Not Performed Recently</td>
+                                        <td class="py-1.5 px-2 hidden sm:table-cell text-slate-600">SystemDB</td>
                                         <td class="py-1.5 px-2 hidden sm:table-cell text-slate-500 truncate max-w-[100px]">Last backed up: Dec 31...</td>
+                                    </tr>
+                                    <tr class="bg-red-50/30">
+                                        <td class="py-1.5 px-2 font-medium text-slate-700 border-l-4 border-red-500">SQL01</td>
+                                        <td class="py-1.5 px-2"><span class="bg-red-500 text-white px-1 py-0.5 rounded-full font-bold text-[8px]">1</span></td>
+                                        <td class="py-1.5 px-2 font-bold text-slate-800">Backups Not Performed Recently</td>
+                                        <td class="py-1.5 px-2 hidden sm:table-cell text-slate-600">Database01</td>
+                                        <td class="py-1.5 px-2 hidden sm:table-cell text-slate-500 truncate max-w-[100px]">Last backed up: Dec 31...</td>
+                                    </tr>
+                                    <tr class="bg-red-50/30">
+                                        <td class="py-1.5 px-2 font-medium text-slate-700 border-l-4 border-red-500">SQL06</td>
+                                        <td class="py-1.5 px-2"><span class="bg-red-500 text-white px-1 py-0.5 rounded-full font-bold text-[8px]">1</span></td>
+                                        <td class="py-1.5 px-2 font-bold text-slate-800">Full Recovery Model w/o Log Backups</td>
+                                        <td class="py-1.5 px-2 hidden sm:table-cell text-slate-600">Database04</td>
+                                        <td class="py-1.5 px-2 hidden sm:table-cell text-slate-500 truncate max-w-[100px]">Log file 19000.00MB...</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
+
+                    <div class="px-3 pb-3">
+                        <div class="bg-blue-50 border-l-4 border-blue-600 px-2 py-1 mb-2">
+                            <h4 class="text-blue-900 font-bold text-[9px] uppercase tracking-wide">Failed Jobs</h4>
+                        </div>
+                        <div class="bg-emerald-50 border border-emerald-100 p-2 rounded text-center">
+                            <p class="text-emerald-700 font-bold text-[9px]">System Healthy: No failed jobs reported in the last 24 hours.</p>
+                        </div>
+                    </div>
+
                  </div>
             </div>
         </div>
@@ -182,28 +227,57 @@
             </div>
             
             <div class="relative bg-red-50/30 flex-grow p-4 flex flex-col items-center justify-center gap-3">
-                <div class="relative p-4 bg-white rounded-xl border border-red-100 shadow-xl w-full">
+                
+                <div class="relative p-4 bg-white rounded-xl border border-red-100 shadow-xl w-full transition-transform duration-300">
                     <div class="absolute -top-3 -right-3">
                         <span class="flex h-3 w-3 absolute -right-1 -top-1">
                           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                           <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
                         </span>
-                        <span class="text-[8px] bg-red-100 text-red-700 px-2 py-0.5 rounded-full font-bold shadow-sm border border-red-200 uppercase">Critical</span>
+                        <span class="text-[8px] bg-red-100 text-red-700 px-2 py-0.5 rounded-full font-bold shadow-sm border border-red-200">CRITICAL</span>
                     </div>
+                    
+                    <div class="flex items-center gap-2 mb-2 border-b border-red-50 pb-2">
+                        <div class="bg-red-100 p-1 rounded-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-red-600" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <span class="text-[10px] text-slate-900 font-bold">OpsDBA Monitor</span>
+                    </div>
+                    
                     <div class="font-sans text-[10px] text-slate-600 leading-relaxed">
-                        <p class="mb-2">Alert detected on <strong>SQL03</strong>.</p>
+                        <p class="mb-2">Alert detected on <strong>SQL03</strong> at <strong>02:14:05 AM</strong>.</p>
                         <div class="bg-red-50 border-l-2 border-red-500 p-2 rounded-r-md">
-                            <strong class="text-red-900 block mb-0.5">LOG FULL ALERT (9002)</strong>
-                            <p class="text-red-800">OpsDBA engine notified.</p>
+                            <strong class="text-red-900 block mb-0.5">SQL AGENT STOPPED</strong>
+                            <p class="text-red-800">Automated restart attempted. OpsDBA team notified.</p>
                         </div>
                     </div>
                 </div>
-                <div class="pt-4 text-center">
-                    <a href="InstantAlerts.html" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 transition flex items-center justify-center gap-1 group">
-                        View Full Alerts Catalog 
-                        <span class="group-hover:translate-x-1 transition-transform">→</span>
-                    </a>
+
+                <div class="relative p-4 bg-white rounded-xl border border-red-100 shadow-xl w-full transition-transform duration-300">
+                    <div class="absolute -top-3 -right-3">
+                         <span class="text-[8px] bg-red-100 text-red-700 px-2 py-0.5 rounded-full font-bold shadow-sm border border-red-200">CRITICAL</span>
+                    </div>
+                    
+                    <div class="flex items-center gap-2 mb-2 border-b border-red-50 pb-2">
+                        <div class="bg-red-100 p-1 rounded-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-red-600" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <span class="text-[10px] text-slate-900 font-bold">OpsDBA Monitor</span>
+                    </div>
+                    
+                    <div class="font-sans text-[10px] text-slate-600 leading-relaxed">
+                        <p class="mb-2">Alert detected on <strong>SQL07</strong> at <strong>02:15:20 AM</strong>.</p>
+                        <div class="bg-red-50 border-l-2 border-red-500 p-2 rounded-r-md">
+                            <strong class="text-red-900 block mb-0.5">SERVER UNREACHABLE</strong>
+                            <p class="text-red-800">OpsDBA Team notified.</p>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
 
@@ -219,16 +293,50 @@
             </div>
             
             <div class="relative bg-emerald-50/30 flex-grow p-4 flex flex-col gap-3 justify-center">
-                 <div class="p-4 bg-white rounded-xl border border-slate-200 shadow-xl w-full">
+                 <div class="relative p-4 bg-white rounded-xl border border-slate-200 shadow-xl w-full transition-transform duration-300">
+                    <div class="absolute -top-3 -right-3">
+                         <span class="text-[8px] bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-bold shadow-sm border border-green-200">VERIFIED</span>
+                    </div>
+                    
+                    <div class="flex items-center gap-2 mb-2 border-b border-slate-100 pb-2">
+                        <div class="bg-blue-100 p-1 rounded-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-blue-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6a1 1 0 0 0-1 1v5a1 1 0 0 0 .29.71l3 3a1 1 0 0 0 1.42-1.42L13 11.59V7a1 1 0 0 0-1-1z"/></svg>
+                        </div>
+                        <span class="text-[10px] text-slate-900 font-bold">Expert Insight</span>
+                    </div>
+                    
                     <div class="font-sans text-[10px] text-slate-600 leading-relaxed">
-                        <p class="mb-2 font-bold text-slate-900">Expert Insight</p>
+                        <p class="mb-2">Confirmed <strong>Critical I/O Subsystem Failure (Error 823)</strong> on drive F:\.</p>
                         <div class="bg-blue-50 border-l-2 border-blue-500 p-2 rounded-r-md">
-                            <p class="text-blue-800">Confirmed Critical I/O Failure (Error 823) on drive F:\.</p>
+                            <strong class="text-blue-900 block mb-0.5 uppercase tracking-wide">Action:</strong>
+                            <p class="text-blue-800">Contact storage vendor immediately for hardware validation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative p-4 bg-white rounded-xl border border-slate-200 shadow-xl w-full transition-transform duration-300">
+                    <div class="absolute -top-3 -right-3">
+                         <span class="text-[8px] bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-bold shadow-sm border border-green-200">VERIFIED</span>
+                    </div>
+                    
+                    <div class="flex items-center gap-2 mb-2 border-b border-slate-100 pb-2">
+                        <div class="bg-blue-100 p-1 rounded-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-blue-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6a1 1 0 0 0-1 1v5a1 1 0 0 0 .29.71l3 3a1 1 0 0 0 1.42-1.42L13 11.59V7a1 1 0 0 0-1-1z"/></svg>
+                        </div>
+                        <span class="text-[10px] text-slate-900 font-bold">Expert Insight</span>
+                    </div>
+                    
+                    <div class="font-sans text-[10px] text-slate-600 leading-relaxed">
+                        <p class="mb-2">Confirmed <strong>Index Fragmentation</strong> impact on high-traffic Database04.</p>
+                        <div class="bg-emerald-50 border-l-2 border-emerald-500 p-2 rounded-r-md">
+                            <strong class="text-emerald-900 block mb-0.5 uppercase tracking-wide">Resolution:</strong>
+                            <p class="text-emerald-800">Automated maintenance script scheduled for off-peak hours (1AM).</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 </section>
 
@@ -236,30 +344,151 @@
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
         
         <div class="group p-8 rounded-3xl border border-slate-100 bg-white shadow-sm hover:shadow-xl hover:-translate-y-2 hover:border-blue-200 transition-all duration-300">
-            <div class="h-10 w-10 ai-gradient rounded-lg mb-4 flex items-center justify-center text-white font-bold text-sm">01</div>
-            <h3 class="text-xl font-bold text-slate-900 mb-2">We Collect the Data</h3>
-            <p class="text-slate-500 text-sm leading-relaxed">Our OpsDBA database engine automatically polls your servers for job status, storage, and critical errors.</p>
+            <div class="h-10 w-10 ai-gradient rounded-lg mb-4 flex items-center justify-center text-white font-bold text-sm group-hover:scale-110 transition-transform duration-300">01</div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">We Collect the Data</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">
+                Our OpsDBA database engine automatically polls your servers for job status, storage allocations, and critical errors, consolidating everything into a master view we review daily.
+            </p>
         </div>
 
         <div class="group p-8 rounded-3xl border border-slate-100 bg-white shadow-sm hover:shadow-xl hover:-translate-y-2 hover:border-blue-200 transition-all duration-300">
-            <div class="h-10 w-10 ai-gradient rounded-lg mb-4 flex items-center justify-center text-white font-bold text-sm">02</div>
-            <h3 class="text-xl font-bold text-slate-900 mb-2">We Report the Findings</h3>
-            <p class="text-slate-500 text-sm leading-relaxed">You get a clear Summary Report transforming critical findings into an actionable dashboard.</p>
+            <div class="h-10 w-10 ai-gradient rounded-lg mb-4 flex items-center justify-center text-white font-bold text-sm group-hover:scale-110 transition-transform duration-300">02</div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">We Report the Findings</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">
+                You get a "DBA Summary Report" straight from our team. No more guessing if your backups ran. We transform critical findings into an actionable dashboard for you.
+            </p>
         </div>
 
         <div class="group p-8 rounded-3xl border border-slate-100 bg-white shadow-sm hover:shadow-xl hover:-translate-y-2 hover:border-blue-200 transition-all duration-300">
-            <div class="h-10 w-10 ai-gradient rounded-lg mb-4 flex items-center justify-center text-white font-bold text-sm">03</div>
-            <h3 class="text-xl font-bold text-slate-900 mb-2">We Handle the Alerts</h3>
-            <p class="text-slate-500 text-sm leading-relaxed mb-4">When a precision-tuned alert fires, it comes to our notification center for expert remediation.</p>
-            <a href="InstantAlerts.html" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition uppercase tracking-wider">
-                Learn about InstantAlerts &rarr;
+            <div class="h-10 w-10 ai-gradient rounded-lg mb-4 flex items-center justify-center text-white font-bold text-sm group-hover:scale-110 transition-transform duration-300">03</div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">We Handle the Alerts</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-4">
+                When a precision-tuned alert fires, it comes to our notification center. We assess the root cause and provide expert resolution, often before you even know there was an issue.
+            </p>
+            <a href="InstantAlerts.html" class="text-xs font-bold text-blue-600 hover:text-blue-800 transition uppercase tracking-wider">
+                Explore the Alert Catalog &rarr;
             </a>
         </div>
 
+        <div class="group p-8 rounded-3xl border border-slate-100 bg-white shadow-sm hover:shadow-xl hover:-translate-y-2 hover:border-blue-200 transition-all duration-300">
+            <div class="h-10 w-10 ai-gradient rounded-lg mb-4 flex items-center justify-center text-white font-bold text-sm group-hover:scale-110 transition-transform duration-300">04</div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">We Verify Compliance</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">
+                We automate the delivery of essential audits, including backup evidence and elevated permission tracking, to keep your security and compliance teams happy.
+            </p>
         </div>
+
+        <div class="group p-8 rounded-3xl border border-slate-100 bg-white shadow-sm hover:shadow-xl hover:-translate-y-2 hover:border-blue-200 transition-all duration-300">
+            <div class="h-10 w-10 ai-gradient rounded-lg mb-4 flex items-center justify-center text-white font-bold text-sm group-hover:scale-110 transition-transform duration-300">05</div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">We Manage Vulnerabilities</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">
+                We track versions and coordinate the seamless installation of cumulative updates and security patches to ensure your SQL instances are always current.
+            </p>
+        </div>
+
+        <div class="group p-8 rounded-3xl border-2 border-dashed border-blue-200 bg-blue-50/30 flex flex-col justify-center hover:bg-blue-50 hover:border-blue-400 hover:-translate-y-2 transition-all duration-300 shadow-sm hover:shadow-lg">
+            <span class="text-blue-600 font-bold text-[10px] uppercase tracking-widest mb-2 group-hover:tracking-[0.15em] transition-all">The Value Prop</span>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Fractional Cost. Full Expertise.</h3>
+            <p class="text-slate-500 text-xs">
+                Hiring a full-time Senior DBA costs $140k+. Hiring OpsDBA gives you that same expertise and uptime for the cost of a support ticket.
+            </p>
+        </div>
+    </div>
 </section>
 
-<section id="pricing" class="py-16 px-6 bg-white border-t border-slate-100">
+<section id="how-it-works" class="py-20 px-6 bg-slate-50 overflow-hidden border-t border-slate-200">
+    <div class="max-w-4xl mx-auto text-center mb-16">
+        <div class="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-lg text-xs font-bold uppercase tracking-widest mb-4">
+            The OpsDBA Model
+        </div>
+        <h2 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-6">
+            Artificial Intelligence Detects.<br>
+            <span class="text-blue-600">We Validate and Resolve.</span>
+        </h2>
+        <p class="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+            Pure automation misses context. Pure human monitoring is expensive. We use a hybrid approach to give you the best of both worlds.
+        </p>
+        <div class="mt-6">
+            <a href="Requirements.html" class="inline-flex items-center text-sm font-bold text-blue-600 hover:text-blue-800 transition">
+                View Technical Prerequisites &rarr;
+            </a>
+        </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto relative">
+        <div class="absolute left-[19px] md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-slate-200 via-blue-200 to-slate-200 md:-translate-x-1/2"></div>
+
+        <div class="relative flex flex-col md:flex-row items-center justify-between gap-8 mb-20 group">
+            <div class="md:w-1/2 md:text-right order-2 md:order-1 pl-12 md:pl-0 md:pr-12">
+                <h4 class="text-2xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">Automated Agents Scan</h4>
+                <p class="text-slate-500 leading-relaxed">Our lightweight agents scan your logs locally. They feed the data into our OpsDBA master database for analysis, ensuring we never miss a beat.</p>
+            </div>
+            <div class="absolute left-0 md:relative md:left-auto md:w-auto order-1 md:order-2 flex justify-center z-10">
+                <div class="h-10 w-10 bg-white border-4 border-slate-200 rounded-full flex items-center justify-center group-hover:border-blue-500 group-hover:scale-110 transition-all duration-300 shadow-sm">
+                    <span class="font-bold text-slate-400 group-hover:text-blue-600 text-sm">1</span>
+                </div>
+            </div>
+            <div class="md:w-1/2 order-3 md:pl-12 hidden md:block opacity-0"></div>
+        </div>
+
+        <div class="relative flex flex-col md:flex-row items-center justify-between gap-8 mb-20 group">
+            <div class="md:w-1/2 md:text-right order-2 md:order-1 pl-12 md:pl-0 md:pr-12 hidden md:block opacity-0"></div>
+            <div class="absolute left-0 md:relative md:left-auto md:w-auto order-1 md:order-2 flex justify-center z-10">
+                <div class="h-14 w-14 ai-gradient rounded-full flex items-center justify-center shadow-lg shadow-blue-200 ring-4 ring-white group-hover:scale-110 transition-transform duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="md:w-1/2 order-3 md:pl-12 pl-12">
+                 <h4 class="text-2xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">AI Diagnoses</h4>
+                <p class="text-slate-500 leading-relaxed">We utilize advanced <strong>Large Language Models (LLMs)</strong> to parse complex error stacks and identify root causes in seconds, preparing a briefing for our engineers.</p>
+            </div>
+        </div>
+
+        <div class="relative flex flex-col md:flex-row items-center justify-between gap-8 group">
+            <div class="md:w-1/2 md:text-right order-2 md:order-1 pl-12 md:pl-0 md:pr-12">
+                <h4 class="text-2xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">Expert Resolution</h4>
+                <p class="text-slate-500 leading-relaxed mb-4"><strong>Corey Klessig (Principal SQL Server DBA)</strong> and our team review the findings. You don't get a robot's guess; you get a solution verified by 20+ years of experience.</p>
+            </div>
+            
+            <div class="absolute left-0 md:relative md:left-auto md:w-auto order-1 md:order-2 flex justify-center z-10">
+                <div class="h-10 w-10 bg-slate-900 border-4 border-slate-100 rounded-full flex items-center justify-center group-hover:border-slate-800 group-hover:scale-110 transition-all duration-300 shadow-xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+            </div>
+            
+            <div class="md:w-1/2 order-3 md:pl-12 pl-12 mt-4 md:mt-0">
+                <div class="relative p-5 bg-white rounded-xl border border-slate-200 shadow-xl max-w-sm hover:scale-105 transition-transform duration-300">
+                    <div class="absolute -top-3 -right-3">
+                         <span class="text-[10px] bg-green-100 text-green-700 px-3 py-1 rounded-full font-bold shadow-sm border border-green-200">VERIFIED ANALYSIS</span>
+                    </div>
+                    
+                    <div class="flex items-center gap-2 mb-3 border-b border-slate-100 pb-2">
+                        <div class="bg-blue-100 p-1.5 rounded-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-blue-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6a1 1 0 0 0-1 1v5a1 1 0 0 0 .29.71l3 3a1 1 0 0 0 1.42-1.42L13 11.59V7a1 1 0 0 0-1-1z"/></svg>
+                        </div>
+                        <span class="text-xs text-slate-900 font-bold">OpsDBA Expert Insight</span>
+                    </div>
+                    
+                    <div class="font-sans text-xs text-slate-600 leading-relaxed">
+                        <p class="mb-3">We reviewed the AI-processed logs. We have a confirmed <strong>Critical I/O Subsystem Failure (Error 823)</strong> on drive F:\.</p>
+                        
+                        <div class="bg-blue-50 border-l-4 border-blue-600 p-3 rounded-r-md">
+                            <strong class="text-blue-900 text-[10px] block mb-1">OUR ACTION PLAN:</strong>
+                            <p class="text-blue-800 text-[10px]">We recommend contacting your storage vendor or internal sys admins responsible for storage immediately.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="pricing" class="py-16 px-6 bg-white">
     <div class="max-w-6xl mx-auto">
         <div class="text-center mb-12">
             <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-4">Support Tiers</h2>
@@ -273,61 +502,95 @@
                         <th class="py-6 px-4 bg-white border-b border-slate-100 min-w-[250px]">
                             <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Service Tiers</span>
                         </th>
-                        <th class="py-6 px-4 bg-white border-b-4 border-emerald-500 text-center min-w-[200px]">Core</th>
-                        <th class="py-6 px-4 bg-blue-50/50 border-b-4 border-blue-500 text-center min-w-[200px]">Standard</th>
-                        <th class="py-6 px-4 bg-white border-b-4 border-slate-900 text-center min-w-[200px]">Premier</th>
+                        <th class="py-6 px-4 bg-white border-b-4 border-emerald-500 text-center min-w-[200px]">
+                            <div class="text-lg font-bold text-slate-900">Core</div>
+                            <div class="text-sm text-slate-500">$750/mo</div>
+                        </th>
+                        <th class="py-6 px-4 bg-blue-50/50 border-b-4 border-blue-500 text-center min-w-[200px]">
+                            <div class="text-lg font-bold text-slate-900">Standard</div>
+                            <div class="text-sm text-slate-500">$1,250/mo</div>
+                        </th>
+                        <th class="py-6 px-4 bg-white border-b-4 border-slate-900 text-center min-w-[200px]">
+                            <div class="text-lg font-bold text-slate-900">Premier</div>
+                            <div class="text-sm text-slate-500">$2,500/mo</div>
+                        </th>
                     </tr>
                 </thead>
+                
                 <tbody class="text-sm text-slate-600">
-                    <tr>
-                        <td class="py-4 px-4 border-b border-slate-100">Managed Instances</td>
+                     <tr>
+                        <td class="py-4 px-4 border-b border-slate-100">Managed Servers/Instances</td>
                         <td class="py-4 px-4 border-b border-slate-100 text-center">1-3</td>
-                        <td class="py-4 px-4 border-b border-slate-100 text-center">Up to 10</td>
-                        <td class="py-4 px-4 border-b border-slate-100 text-center">Up to 20</td>
+                        <td class="py-4 px-4 border-b border-slate-100 text-center font-semibold text-blue-600">Up to 10</td>
+                        <td class="py-4 px-4 border-b border-slate-100 text-center font-semibold text-blue-600">Up to 20</td>
                     </tr>
                     <tr>
-                        <td class="py-4 px-4 border-b border-slate-100">
-                            SQL Agent Notification Operator
-                            <a href="InstantAlerts.html" class="ml-1 text-[10px] text-blue-500 hover:underline">(View Catalog)</a>
-                        </td>
-                        <td class="py-4 px-4 border-b border-slate-100 text-center">&lt; 48hr</td>
-                        <td class="py-4 px-4 border-b border-slate-100 text-center font-bold">&lt; 24hr</td>
-                        <td class="py-4 px-4 border-b border-slate-100 text-center font-bold">&lt; 6hr</td>
+                        <td class="py-4 px-4 border-b border-slate-100">DBA Support Summary Report</td>
+                        <td class="py-4 px-4 border-b border-slate-100 text-center">Monthly</td>
+                        <td class="py-4 px-4 border-b border-slate-100 text-center font-semibold text-blue-600">Weekly</td>
+                        <td class="py-4 px-4 border-b border-slate-100 text-center font-semibold text-blue-600">Daily</td>
                     </tr>
-                    </tbody>
+                    <tr>
+                        <td class="py-4 px-4 border-b border-slate-100">Monthly Support Calls</td>
+                        <td class="py-4 px-4 border-b border-slate-100 text-center">1</td>
+                        <td class="py-4 px-4 border-b border-slate-100 text-center">Up to 5</td>
+                        <td class="py-4 px-4 border-b border-slate-100 text-center">Unlimited</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 px-4 border-b border-slate-100">Direct Access via</td>
+                        <td class="py-4 px-4 border-b border-slate-100 text-center">E-Mail Only</td>
+                        <td class="py-4 px-4 border-b border-slate-100 text-center">E-Mail and SMS</td>
+                        <td class="py-4 px-4 border-b border-slate-100 text-center">E-Mail, SMS, and Phone</td>
+                    </tr>
+
+                    <tr>
+                        <td class="py-4 px-4 border-b border-slate-100">Our Response Time</td>
+                        <td class="py-4 px-4 border-b border-slate-100 text-center">&lt; 48 Hours</td>
+                        <td class="py-4 px-4 border-b border-slate-100 text-center">&lt; 24 Hours</td>
+                        <td class="py-4 px-4 border-b border-slate-100 text-center">&lt; 6 Hours</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 px-4 border-b border-slate-100">SQL Agent Notification Operator</td>
+                        <td class="py-4 px-4 border-b border-slate-100 text-center">&lt; 48 Hour Response</td>
+                        <td class="py-4 px-4 border-b border-slate-100 text-center">&lt; 24 Hour Response</td>
+                        <td class="py-4 px-4 border-b border-slate-100 text-center">&lt; 6 Hour Response</td>
+                    </tr>
+                     <tr>
+                        <td class="py-4 px-4 border-b border-slate-100">Failed Job Notification*</td>
+                        <td class="py-4 px-4 border-b border-slate-100 text-center">&lt; 48 Hour Response</td>
+                        <td class="py-4 px-4 border-b border-slate-100 text-center">&lt; 24 Hour Response</td>
+                        <td class="py-4 px-4 border-b border-slate-100 text-center">&lt; 6 Hour Response</td>
+                    </tr>
+                </tbody>
             </table>
+        </div>
+
+        <div class="mt-6 p-10 rounded-3xl border-2 border-dashed border-blue-200 bg-blue-50/30 flex flex-col md:flex-row items-center justify-between gap-8 transition-all duration-300 hover:border-blue-400">
+            <div class="max-w-2xl text-left">
+                <h3 class="text-3xl font-bold text-slate-900 mb-3 tracking-tight">Enterprise <span class="text-transparent bg-clip-text ai-gradient">Support</span></h3>
+                <p class="text-slate-600 leading-relaxed text-sm">For complex environments with <strong>more than 20 SQL Servers</strong>. Our Enterprise Support Tier includes a dedicated Support DBA, custom reporting frequencies, and our highest priority SLAs.</p>
+        </div>
+        <div class="shrink-0">
+            <a href="ScheduleMeeting.html" class="inline-flex items-center justify-center bg-slate-900 text-white px-8 py-4 rounded-full text-sm font-bold hover:bg-blue-600 transition-all duration-300 shadow-lg hover:shadow-blue-200">
+                Schedule Meeting
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+            </a>
+        </div>
         </div>
     </div>
 </section>
 
-<footer class="bg-slate-900 text-slate-300 py-12 px-6 border-t border-slate-800">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
-        <div class="md:col-span-2">
-            <a href="#" class="flex items-center gap-1 mb-4">
-                <span class="text-2xl font-extrabold tracking-tighter text-white">OpsDBA<span class="text-blue-500">.ai</span></span>
-            </a>
-            <p class="text-slate-400 text-sm leading-relaxed max-w-md mb-6">
-                Proactive SQL Server DBA Support enhanced with next-gen AI agents. We prevent downtime before it happens.
-            </p>
-            <div class="flex items-center gap-2 mt-2">
-                <div class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></div>
-                <span class="text-sm font-bold text-white uppercase tracking-widest">Corey Klessig, Principal SQL Server DBA</span>
-            </div>
-        </div>
+<div id="shared-footer"></div>
 
-        <div class="md:col-span-1 pt-2">
-            <ul class="space-y-4">
-                <li><a href="InstantAlerts.html" class="text-sm font-medium text-slate-400 hover:text-white transition block py-1">InstantAlerts Catalog</a></li>
-                <li><a href="Requirements.html" class="text-sm font-medium text-slate-400 hover:text-white transition block py-1">Technical Requirements</a></li>
-            </ul>
-        </div>
-
-        <div class="md:col-span-1 md:text-right pt-2 text-sm">
-            <a href="mailto:support@opsdba.ai" class="font-bold text-white block mb-1">support@opsdba.ai</a>
-            <p class="text-slate-500 leading-relaxed mt-4">Austin, TX 78731</p>
-        </div>
-    </div>
-</footer>
+<script>
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('shared-footer').innerHTML = data;
+        });
+</script>
 
 </body>
 </html>
