@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstantAlerts | OpsDBA Real-Time SQL Monitoring</title>
+    
+    <meta name="description" content="OpsDBA InstantAlerts provide real-time notification of critical SQL Server failures, hardware issues, and security breaches.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="avatar.png?v=1">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; margin: 0; padding: 0; overflow-x: hidden; }
+        .ai-gradient { background: linear-gradient(135deg, #70a1d7 0%, #3b82f6 100%); }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body>
+
+<div class="bg-slate-900 text-slate-300 py-2 px-6 text-xs font-medium border-b border-slate-800 relative z-[60]">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-center md:justify-end gap-2 md:gap-6 text-center">
+        <span class="opacity-60 hidden md:inline">Partner Programs:</span>
+        <span class="flex items-center justify-center gap-1">
+            Are you a <a href="Partners.html" class="text-white hover:text-blue-400 underline decoration-slate-600 underline-offset-2 transition-colors">DBA</a>?
+        </span>
+        <span class="hidden md:inline text-slate-700">|</span>
+        <span class="flex items-center justify-center gap-1">
+            <a href="Partners.html" class="text-white hover:text-blue-400 underline decoration-slate-600 underline-offset-2 transition-colors">Managed Service Provider</a>?
+        </span>
+    </div>
+</div>
+
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 py-4 px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-1 hover:opacity-90 transition">
+            <span class="text-3xl font-extrabold tracking-tighter text-slate-900">OpsDBA<span class="text-blue-600">.ai</span></span>
+        </a>
+        
+        <div class="flex items-center gap-6 md:gap-10">
+            <a href="index.html#how-it-works" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition">How It Works</a>
+            <a href="Requirements.html" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition">Requirements</a>
+            <a href="index.html#pricing" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition">Pricing</a>
+            <a href="ScheduleMeeting.html" class="bg-slate-900 text-white px-5 py-2 rounded-full text-xs font-bold hover:bg-blue-600 transition tracking-wide uppercase">Schedule Meeting</a>
+        </div>
+    </div>
+</nav>
+
+<header class="pt-20 pb-16 px-6 bg-white text-center relative overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -z-10"></div>
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">
+            Instant<span class="text-transparent bg-clip-text ai-gradient">Alerts</span>
+        </h1>
+        <p class="text-lg md:text-xl text-slate-600 leading-relaxed font-medium mb-10">
+            Precision monitoring that finds the "silent killers" before they find your business. 
+            Real-time, branded, and intelligently throttled.
+        </p>
+    </div>
+</header>
+
+<section class="py-12 px-6 bg-slate-50 border-y border-slate-100">
+    <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+        <div class="w-full lg:w-1/2">
+            <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
+                <div class="p-4 border-b border-slate-100 flex items-center justify-between bg-white">
+                    <span class="text-lg font-bold text-slate-900">OpsDBA<span class="text-blue-600">.ai</span></span>
+                    <span class="px-3 py-1 bg-red-100 text-red-600 rounded-full text-[10px] font-bold uppercase tracking-widest border border-red-200">Critical Alert</span>
+                </div>
+                <div class="p-8">
+                    <h2 class="text-xl font-extrabold text-slate-900 mb-4">OpsDBA-Alert-Log-Full</h2>
+                    <div class="space-y-2 mb-6 text-sm">
+                        <p class="text-slate-500"><strong>Server:</strong> <span class="text-slate-900 font-bold">TECHEMET58</span></p>
+                        <p class="text-slate-500"><strong>Severity:</strong> <span class="text-slate-900 font-bold">17</span></p>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-6">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase block mb-3">Log Entry Details</span>
+                        <code class="text-xs text-red-700 leading-relaxed font-mono">
+                            Error: 9002, Severity: 17, State: 4. The transaction log for database 'Production' is full due to 'LOG_BACKUP'.
+                        </code>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-slate-100 text-[10px] text-slate-400 italic">
+                        Note: Future occurrences will be suppressed for 60 minutes to prevent inbox flooding.
+                    </div>
+                </div>
+                <div class="px-8 py-4 bg-slate-50 flex justify-between items-center text-[10px] text-slate-500 font-medium">
+                    <span>Generated by OpsDBA.ai</span>
+                    <span>Service Tier: Standard</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full lg:w-1/2 space-y-8">
+            <h3 class="text-3xl font-bold text-slate-900">Beyond Standard Monitoring</h3>
+            <div class="space-y-6">
+                <div class="flex gap-4">
+                    <div class="shrink-0 h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-xs">✓</div>
+                    <p class="text-slate-600 leading-relaxed"><strong class="text-slate-900">Zero-Noise Throttling:</strong> Our proprietary 60-minute cooldown logic ensures you see the crisis immediately without being spammed by repetitive notifications.</p>
+                </div>
+                <div class="flex gap-4">
+                    <div class="shrink-0 h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-xs">✓</div>
+                    <p class="text-slate-600 leading-relaxed"><strong class="text-slate-900">Deep-Trace Scoping:</strong> We don't just tell you something is wrong. We scrape the actual SQL Error Log to provide the root cause in the first email.</p>
+                </div>
+                <div class="flex gap-4">
+                    <div class="shrink-0 h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-xs">✓</div>
+                    <p class="text-slate-600 leading-relaxed"><strong class="text-slate-900">Human Validation:</strong> Every InstantAlert is piped to our team. We often begin remediation before your internal team even receives the notification.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">The InstantAlerts Catalog</h2>
+            <p class="text-slate-500">We monitor over 20 critical vectors in real-time.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="p-8 rounded-2xl border border-slate-100 bg-white shadow-sm hover:shadow-lg transition-shadow">
+                <div class="text-2xl mb-4">🛡️</div>
+                <h4 class="font-bold text-slate-900 mb-2">Data Integrity</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Real-time detection of logical & physical corruption (823/824) and early-warning storage health retries (825).</p>
+            </div>
+            <div class="p-8 rounded-2xl border border-slate-100 bg-white shadow-sm hover:shadow-lg transition-shadow">
+                <div class="text-2xl mb-4">🔄</div>
+                <h4 class="font-bold text-slate-900 mb-2">Continuity</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Immediate notification of Log-Full conditions (9002), Backup engine failures (3041), and Recovery errors.</p>
+            </div>
+            <div class="p-8 rounded-2xl border border-slate-100 bg-white shadow-sm hover:shadow-lg transition-shadow">
+                <div class="text-2xl mb-4">⚡</div>
+                <h4 class="font-bold text-slate-900 mb-2">Infrastructure</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Watching Out-of-Memory events (701), Deadlocks (1205), and all critical SQL Severities from 17 to 25.</p>
+            </div>
+            <div class="p-8 rounded-2xl border border-slate-100 bg-white shadow-sm hover:shadow-lg transition-shadow">
+                <div class="text-2xl mb-4">🔐</div>
+                <h4 class="font-bold text-slate-900 mb-2">Security</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Tracking unauthorized login attempts and brute-force patterns (18456) to protect your perimeter.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-16 px-6 bg-slate-900 text-white">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-2xl font-bold mb-6">Technical Requirements</h2>
+        <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 inline-block text-left">
+            <div class="flex gap-4 items-center mb-4">
+                <div class="h-10 w-10 rounded-lg bg-blue-500 flex items-center justify-center text-xl">📧</div>
+                <div>
+                    <h4 class="font-bold">Database Mail Configuration</h4>
+                    <p class="text-sm text-slate-400">InstantAlerts are triggered locally on the monitored instance.</p>
+                </div>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed">
+                To ensure zero-latency notification, <strong>Database Mail must be configured</strong> on each monitored SQL Server. This allow the local instance to trigger and transmit the alert immediately upon failure, bypassing centralized polling delays.
+            </p>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-slate-900 text-slate-300 py-12 px-6 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+        <div class="md:col-span-2">
+            <a href="index.html" class="flex items-center gap-1 mb-4">
+                <span class="text-2xl font-extrabold tracking-tighter text-white">OpsDBA<span class="text-blue-500">.ai</span></span>
+            </a>
+            <p class="text-slate-400 text-sm leading-relaxed max-w-md mb-6">
+                Proactive SQL Server DBA Support enhanced with next-gen AI agents. We prevent downtime before it happens.
+            </p>
+            <div class="flex flex-col gap-1">
+                <div class="flex items-center gap-2 mt-2">
+                    <div class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></div>
+                    <span class="text-sm font-bold text-white uppercase tracking-widest">Corey Klessig, Principal SQL Server DBA</span>
+                </div>
+            </div>
+        </div>
+        <div class="md:col-span-1 pt-2">
+            <ul class="space-y-4 text-sm">
+                <li><a href="Partners.html" class="hover:text-white transition">Are you a DBA?</a></li>
+                <li><a href="Partners.html" class="hover:text-white transition">Are you a Service Provider?</a></li>
+                <li><a href="Requirements.html" class="hover:text-white transition">Technical Requirements</a></li>
+            </ul>
+        </div>
+        <div class="md:col-span-1 md:text-right pt-2 text-sm">
+            <a href="mailto:support@opsdba.ai" class="font-bold text-white hover:text-blue-400 block mb-1">support@opsdba.ai</a>
+            <p class="text-slate-500">5900 Balcones Drive # 21158<br>Austin, TX 78731</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
