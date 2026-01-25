@@ -12,13 +12,14 @@
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #ffffff; margin: 0; padding: 0; overflow-x: hidden; }
         .ai-gradient { background: linear-gradient(135deg, #70a1d7 0%, #3b82f6 100%); }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
-<body>
+<body class="bg-white text-slate-900">
 
 <div class="bg-slate-900 text-slate-300 py-2 px-6 text-xs font-medium border-b border-slate-800 relative z-[60]">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-center md:justify-end gap-2 md:gap-6 text-center">
-        <span class="opacity-60 hidden md:inline">Partner Programs:</span>
+        <span class="opacity-60 hidden md:inline text-slate-500">Partner Programs:</span>
         <span class="flex items-center justify-center gap-1">
             Are you a <a href="Partners.html" class="text-white hover:text-blue-400 underline decoration-slate-600 underline-offset-2 transition-colors">DBA</a>?
         </span>
@@ -47,7 +48,7 @@
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-50/50 rounded-full blur-[100px] -z-10"></div>
 
     <div class="max-w-3xl mx-auto text-center">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full border border-blue-100 bg-white shadow-sm text-blue-600 text-xs font-bold tracking-widest uppercase cursor-default">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full border border-blue-100 bg-white shadow-sm text-blue-600 text-[10px] font-black tracking-widest uppercase cursor-default">
             Schedule Meeting
         </div>      
         
@@ -55,7 +56,7 @@
             Connect with <span class="text-transparent bg-clip-text ai-gradient">Us</span>
         </h1>
         
-        <p class="text-lg text-slate-600 leading-relaxed mb-12">
+        <p class="text-lg text-slate-600 leading-relaxed mb-12 font-medium">
             Whether you are looking for a new support solution, need immediate SQL Server troubleshooting, or require Partner Installation Assistance, we are here to help. Select a time that works for you, and we will get to work.
         </p>
 
@@ -71,11 +72,11 @@
                 </div>
                 <div>
                     <h3 class="text-lg font-bold text-slate-900 mb-2">How We Connect</h3>
-                    <p class="text-sm text-slate-600 leading-relaxed">
+                    <p class="text-sm text-slate-600 leading-relaxed font-medium">
                         To ensure the smoothest experience, <strong>we host all OpsDBA.ai meetings via Google Meet.</strong>
                     </p>
                     <p class="text-sm text-slate-500 mt-2 leading-relaxed">
-                        We have found Google Meet to be the most universally compatible platform for our clients, avoiding firewall issues and software updates. It simply works better for us, allowing us to focus entirely on your database needs.
+                        Google Meet is universally compatible, avoiding firewall issues and software updates. It simply works better for us, allowing us to focus entirely on your database needs.
                     </p>
                 </div>
             </div>
@@ -107,7 +108,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
             </a>
-            <p class="mt-4 text-xs text-slate-400">
+            <p class="mt-4 text-[10px] text-slate-400 uppercase font-bold tracking-widest">
                 You will be redirected to our Google Calendar booking page.
             </p>
         </div>
@@ -115,46 +116,13 @@
     </div>
 </section>
 
-<footer class="bg-slate-900 text-slate-300 py-12 px-6 border-t border-slate-800">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
-        
-        <div class="md:col-span-2">
-            <a href="index.html" class="flex items-center gap-1 mb-4">
-                <span class="text-2xl font-extrabold tracking-tighter text-white">OpsDBA<span class="text-blue-500">.ai</span></span>
-            </a>
-            <p class="text-slate-400 text-sm leading-relaxed max-w-md mb-6">
-                Proactive SQL Server DBA Support enhanced with next-gen AI agents. We prevent downtime before it happens.
-            </p>
-            <div class="flex flex-col gap-1">
-                <div class="flex items-center gap-2">
-                    <span class="text-slate-500 text-xs">&copy; 2026 OpsDBA.ai LLC.</span>
-                </div>
-                 <div class="flex items-center gap-2 mt-2">
-                    <div class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></div>
-                    <span class="text-sm font-bold text-white uppercase tracking-widest">Corey Klessig, Principal SQL Server DBA</span>
-                </div>
-            </div>
-        </div>
+<div id="shared-footer"></div>
 
-        <div class="md:col-span-1 pt-2">
-            <ul class="space-y-4">
-                <li><a href="Partners.html" class="text-sm font-medium text-slate-400 hover:text-white transition block py-1">Are you a DBA?</a></li>
-                <li><a href="Partners.html" class="text-sm font-medium text-slate-400 hover:text-white transition block py-1">Are you a Service Provider?</a></li>
-                <li><a href="Requirements.html" class="text-sm font-medium text-slate-400 hover:text-white transition block py-1">Technical Requirements</a></li>
-            </ul>
-        </div>
-
-        <div class="md:col-span-1 md:text-right pt-2">
-            <a href="mailto:support@opsdba.ai" class="text-sm font-bold text-white hover:text-blue-400 transition block mb-1">support@opsdba.ai</a>
-            <a href="tel:+15122858501" class="text-sm font-medium text-slate-400 hover:text-white transition block mb-2">+1 (512) 285-8501</a>
-            <p class="text-xs text-slate-500 leading-relaxed mt-4">
-                5900 Balcones Drive # 21158<br>
-                Austin, TX 78731
-            </p>
-        </div>
-
-    </div>
-</footer>
+<script>
+    fetch('footer.html')
+        .then(res => res.text())
+        .then(data => document.getElementById('shared-footer').innerHTML = data);
+</script>
 
 </body>
 </html>
