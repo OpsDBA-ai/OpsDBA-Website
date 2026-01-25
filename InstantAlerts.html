@@ -3,31 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InstantAlerts | OpsDBA Real-Time SQL Monitoring</title>
+    <title>InstantAlerts | OpsDBA SQL Server Alerting</title>
     
-    <meta name="description" content="OpsDBA InstantAlerts provide real-time notification of critical SQL Server failures, hardware issues, and security breaches.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="avatar.png?v=1">
     
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #ffffff; margin: 0; padding: 0; overflow-x: hidden; }
         .ai-gradient { background: linear-gradient(135deg, #70a1d7 0%, #3b82f6 100%); }
+        .code-font { font-family: 'Consolas', 'Monaco', monospace; }
         html { scroll-behavior: smooth; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+            50% { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15); }
+        }
+        .animate-float-subtle { animation: float 8s ease-in-out infinite; }
     </style>
 </head>
-<body>
+<body class="bg-white text-slate-900">
 
 <div class="bg-slate-900 text-slate-300 py-2 px-6 text-xs font-medium border-b border-slate-800 relative z-[60]">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-center md:justify-end gap-2 md:gap-6 text-center">
-        <span class="opacity-60 hidden md:inline">Partner Programs:</span>
-        <span class="flex items-center justify-center gap-1">
-            Are you a <a href="Partners.html" class="text-white hover:text-blue-400 underline decoration-slate-600 underline-offset-2 transition-colors">DBA</a>?
-        </span>
-        <span class="hidden md:inline text-slate-700">|</span>
-        <span class="flex items-center justify-center gap-1">
-            <a href="Partners.html" class="text-white hover:text-blue-400 underline decoration-slate-600 underline-offset-2 transition-colors">Managed Service Provider</a>?
-        </span>
+    <div class="max-w-6xl mx-auto flex justify-center md:justify-end gap-6 text-center">
+        <a href="index.html" class="text-white hover:text-blue-400 transition-colors">&larr; Back to OpsDBA Main Site</a>
     </div>
 </div>
 
@@ -36,159 +34,202 @@
         <a href="index.html" class="flex items-center gap-1 hover:opacity-90 transition">
             <span class="text-3xl font-extrabold tracking-tighter text-slate-900">OpsDBA<span class="text-blue-600">.ai</span></span>
         </a>
-        
         <div class="flex items-center gap-6 md:gap-10">
             <a href="index.html#how-it-works" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition">How It Works</a>
             <a href="Requirements.html" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition">Requirements</a>
-            <a href="index.html#pricing" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition">Pricing</a>
             <a href="ScheduleMeeting.html" class="bg-slate-900 text-white px-5 py-2 rounded-full text-xs font-bold hover:bg-blue-600 transition tracking-wide uppercase">Schedule Meeting</a>
         </div>
     </div>
 </nav>
 
-<header class="pt-20 pb-16 px-6 bg-white text-center relative overflow-hidden">
+<header class="pt-24 pb-20 px-6 bg-white text-center relative overflow-hidden border-b border-slate-50">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -z-10"></div>
     <div class="max-w-4xl mx-auto">
-        <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border border-blue-100 bg-white shadow-sm text-blue-600 text-[10px] font-black tracking-widest uppercase cursor-default">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+            </span>
+            Internal SQL Agent Alerting
+        </div>
+        <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 mb-6 tracking-tight leading-tight">
             Instant<span class="text-transparent bg-clip-text ai-gradient">Alerts</span>
         </h1>
-        <p class="text-lg md:text-xl text-slate-600 leading-relaxed font-medium mb-10">
-            Precision monitoring that finds the "silent killers" before they find your business. 
-            Real-time, branded, and intelligently throttled.
+        <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed font-medium">
+            We deploy precision-tuned SQL Server Alerts into the <code>msdb</code> system database. We don't just "ping" the server; we hook into the engine's internal exception handler.
         </p>
     </div>
 </header>
 
-<section class="py-12 px-6 bg-slate-50 border-y border-slate-100">
-    <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-        <div class="w-full lg:w-1/2">
-            <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
-                <div class="p-4 border-b border-slate-100 flex items-center justify-between bg-white">
-                    <span class="text-lg font-bold text-slate-900">OpsDBA<span class="text-blue-600">.ai</span></span>
-                    <span class="px-3 py-1 bg-red-100 text-red-600 rounded-full text-[10px] font-bold uppercase tracking-widest border border-red-200">Critical Alert</span>
-                </div>
-                <div class="p-8">
-                    <h2 class="text-xl font-extrabold text-slate-900 mb-4">OpsDBA-Alert-Log-Full</h2>
-                    <div class="space-y-2 mb-6 text-sm">
-                        <p class="text-slate-500"><strong>Server:</strong> <span class="text-slate-900 font-bold">TECHEMET58</span></p>
-                        <p class="text-slate-500"><strong>Severity:</strong> <span class="text-slate-900 font-bold">17</span></p>
-                    </div>
-                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-6">
-                        <span class="text-[10px] font-bold text-slate-400 uppercase block mb-3">Log Entry Details</span>
-                        <code class="text-xs text-red-700 leading-relaxed font-mono">
-                            Error: 9002, Severity: 17, State: 4. The transaction log for database 'Production' is full due to 'LOG_BACKUP'.
-                        </code>
-                    </div>
-                    <div class="mt-4 pt-4 border-t border-slate-100 text-[10px] text-slate-400 italic">
-                        Note: Future occurrences will be suppressed for 60 minutes to prevent inbox flooding.
-                    </div>
-                </div>
-                <div class="px-8 py-4 bg-slate-50 flex justify-between items-center text-[10px] text-slate-500 font-medium">
-                    <span>Generated by OpsDBA.ai</span>
-                    <span>Service Tier: Standard</span>
+<section class="py-16 px-6 bg-slate-50">
+    <div class="max-w-5xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden max-w-[550px] mx-auto animate-float-subtle">
+            <div class="px-6 py-4 border-b border-slate-100 flex justify-between items-center bg-white">
+                <span class="text-lg font-black tracking-tighter text-slate-900">OpsDBA<span class="text-blue-600">.ai</span></span>
+                <div class="flex items-center gap-2">
+                    <div class="h-2 w-2 rounded-full bg-red-500 animate-pulse"></div>
+                    <span class="text-red-600 text-[9px] font-black uppercase tracking-widest">Critical Alert</span>
                 </div>
             </div>
-        </div>
-
-        <div class="w-full lg:w-1/2 space-y-8">
-            <h3 class="text-3xl font-bold text-slate-900">Beyond Standard Monitoring</h3>
-            <div class="space-y-6">
-                <div class="flex gap-4">
-                    <div class="shrink-0 h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-xs">✓</div>
-                    <p class="text-slate-600 leading-relaxed"><strong class="text-slate-900">Zero-Noise Throttling:</strong> Our proprietary 60-minute cooldown logic ensures you see the crisis immediately without being spammed by repetitive notifications.</p>
+            <div class="p-8">
+                <h2 class="text-xl font-extrabold text-slate-900 mb-4 uppercase tracking-tight">OpsDBA-Alert-Error-833</h2>
+                <div class="text-xs space-y-2 mb-6">
+                    <p class="text-slate-500"><strong>Server:</strong> <span class="text-slate-900 font-bold uppercase">SQL07</span></p>
+                    <p class="text-slate-500"><strong>Severity:</strong> <span class="text-slate-900 font-bold uppercase">10 (IO Stall)</span></p>
                 </div>
-                <div class="flex gap-4">
-                    <div class="shrink-0 h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-xs">✓</div>
-                    <p class="text-slate-600 leading-relaxed"><strong class="text-slate-900">Deep-Trace Scoping:</strong> We don't just tell you something is wrong. We scrape the actual SQL Error Log to provide the root cause in the first email.</p>
+                <div class="bg-slate-900 rounded-lg p-6 shadow-inner">
+                    <span class="text-[9px] font-black text-slate-500 uppercase block mb-3 text-slate-400">Log Entry Details</span>
+                    <code class="text-[11px] text-blue-300 leading-relaxed code-font">
+                        Error: 833, Severity: 10, State: 1. SQL Server has encountered 8 occurrence(s) of I/O requests taking longer than 15 seconds to complete on file [F:\DATA\USER_PROD.mdf] in database [Production].
+                    </code>
                 </div>
-                <div class="flex gap-4">
-                    <div class="shrink-0 h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-xs">✓</div>
-                    <p class="text-slate-600 leading-relaxed"><strong class="text-slate-900">Human Validation:</strong> Every InstantAlert is piped to our team. We often begin remediation before your internal team even receives the notification.</p>
+                <div class="mt-4 pt-4 border-t border-slate-100 text-[10px] text-slate-400 italic">
+                    Note: Future occurrences suppressed for 60 minutes to prevent inbox flooding.
                 </div>
+            </div>
+            <div class="px-8 py-4 bg-slate-50 flex justify-between items-center text-[10px] font-bold text-slate-500">
+                <span>Generated by <span class="text-slate-900">OpsDBA</span><span class="text-blue-600">.ai</span></span>
+                <span class="uppercase">Tier: Standard</span>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-20 px-6">
+<section class="py-24 px-6 bg-white">
     <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-slate-900 mb-4">The InstantAlerts Catalog</h2>
-            <p class="text-slate-500">We monitor over 20 critical vectors in real-time.</p>
-        </div>
+        <h2 class="text-3xl font-extrabold mb-16 border-l-4 border-blue-600 pl-6">Active Alert Scenarios</h2>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="p-8 rounded-2xl border border-slate-100 bg-white shadow-sm hover:shadow-lg transition-shadow">
-                <div class="text-2xl mb-4">🛡️</div>
-                <h4 class="font-bold text-slate-900 mb-2">Data Integrity</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">Real-time detection of logical & physical corruption (823/824) and early-warning storage health retries (825).</p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
+            
+            <div>
+                <h4 class="text-xs font-black text-blue-600 uppercase tracking-widest mb-6">Storage Subsystem</h4>
+                <ul class="space-y-8">
+                    <li>
+                        <span class="block text-sm font-bold text-slate-900">Critical I/O Stalls (Error 833)</span>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Identifies storage subsystem saturation. When disk requests exceed 15s, we capture the specific file and database context immediately.</p>
+                    </li>
+                    <li>
+                        <span class="block text-sm font-bold text-slate-900">Read-Retry Warnings (Error 825)</span>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">The single most important indicator of physical drive failure. SQL Server successfully read the data but had to "try again"—a clear sign of a dying disk.</p>
+                    </li>
+                    <li>
+                        <span class="block text-sm font-bold text-slate-900">Hard Corruption (Error 823/824)</span>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Real-time detection of physical IO errors or logical page checksum failures during disk operations.</p>
+                    </li>
+                </ul>
             </div>
-            <div class="p-8 rounded-2xl border border-slate-100 bg-white shadow-sm hover:shadow-lg transition-shadow">
-                <div class="text-2xl mb-4">🔄</div>
-                <h4 class="font-bold text-slate-900 mb-2">Continuity</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">Immediate notification of Log-Full conditions (9002), Backup engine failures (3041), and Recovery errors.</p>
+
+            <div>
+                <h4 class="text-xs font-black text-blue-600 uppercase tracking-widest mb-6">Performance & Pressure</h4>
+                <ul class="space-y-8">
+                    <li>
+                        <span class="block text-sm font-bold text-slate-900">Sustained CPU Pressure (&gt;90%)</span>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Monitoring of the Resource Pool. We alert when the engine is CPU-throttled for a sustained period, identifying runaway queries.</p>
+                    </li>
+                    <li>
+                        <span class="block text-sm font-bold text-slate-900">Memory Thrashing (PLE)</span>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Real-time Page Life Expectancy monitoring. If PLE drops below 300s, it signifies the engine is aggressively flushing data from RAM.</p>
+                    </li>
+                    <li>
+                        <span class="block text-sm font-bold text-slate-900">Deadlock Victim Capture (Error 1205)</span>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Instantly identifies processes killed by the engine due to cyclic dependencies for immediate concurrency tuning.</p>
+                    </li>
+                </ul>
             </div>
-            <div class="p-8 rounded-2xl border border-slate-100 bg-white shadow-sm hover:shadow-lg transition-shadow">
-                <div class="text-2xl mb-4">⚡</div>
-                <h4 class="font-bold text-slate-900 mb-2">Infrastructure</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">Watching Out-of-Memory events (701), Deadlocks (1205), and all critical SQL Severities from 17 to 25.</p>
+
+            <div>
+                <h4 class="text-xs font-black text-blue-600 uppercase tracking-widest mb-6">Operations & Security</h4>
+                <ul class="space-y-8">
+                    <li>
+                        <span class="block text-sm font-bold text-slate-900">Transaction Log Full (Error 9002)</span>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Prevents service-wide "Read-Only" freezes by alerting before storage exhaustion halts all activity.</p>
+                    </li>
+                    <li>
+                        <span class="block text-sm font-bold text-slate-900">Backup Engine Failure (Error 3041)</span>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Immediate notification when a native SQL backup fails, protecting your Recovery Point Objective (RPO).</p>
+                    </li>
+                    <li>
+                        <span class="block text-sm font-bold text-slate-900">Failed Logins (Error 18456)</span>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Monitoring of unauthorized access attempts to identify brute-force patterns or misconfigured accounts.</p>
+                    </li>
+                </ul>
             </div>
-            <div class="p-8 rounded-2xl border border-slate-100 bg-white shadow-sm hover:shadow-lg transition-shadow">
-                <div class="text-2xl mb-4">🔐</div>
-                <h4 class="font-bold text-slate-900 mb-2">Security</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">Tracking unauthorized login attempts and brute-force patterns (18456) to protect your perimeter.</p>
+
+            <div class="lg:col-span-3 pt-12 border-t border-slate-100">
+                <div class="flex items-center gap-3 mb-10">
+                    <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest">Severity & Exception Deep-Dive</h4>
+                    <div class="h-px bg-slate-100 flex-grow"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-6 bg-white rounded-xl border border-slate-200 shadow-sm transition-all">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-sm font-black text-slate-900">Severity 17-19</span>
+                            <span class="px-2 py-0.5 bg-amber-50 text-amber-600 text-[9px] font-bold rounded border border-amber-100 uppercase">Resource Pressure</span>
+                        </div>
+                        <p class="text-xs text-slate-500 leading-relaxed">Identifies bottlenecks including Insufficient Resources and Thread Starvation.</p>
+                    </div>
+
+                    <div class="p-6 bg-white rounded-xl border border-slate-200 shadow-sm transition-all">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-sm font-black text-slate-900">Severity 20-22</span>
+                            <span class="px-2 py-0.5 bg-red-50 text-red-600 text-[9px] font-bold rounded border border-red-100 uppercase">Fatal Engine</span>
+                        </div>
+                        <p class="text-xs text-slate-500 leading-relaxed">Signifies tasks terminated due to severe engine exceptions or logical corruption.</p>
+                    </div>
+
+                    <div class="p-6 bg-white rounded-xl border border-slate-200 shadow-sm transition-all">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-sm font-black text-slate-900">Severity 23-25</span>
+                            <span class="px-2 py-0.5 bg-slate-900 text-white text-[9px] font-bold rounded uppercase">Fatal Hardware</span>
+                        </div>
+                        <p class="text-xs text-slate-500 leading-relaxed">Indicates Physical Media Failures or severe hardware inconsistencies.</p>
+                    </div>
+
+                    <div class="p-6 bg-white rounded-xl border border-slate-200 shadow-sm transition-all">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-sm font-black text-slate-900">Error 833</span>
+                            <span class="px-2 py-0.5 bg-blue-50 text-blue-600 text-[9px] font-bold rounded border border-blue-100 uppercase">IO Stall Latency</span>
+                        </div>
+                        <p class="text-xs text-slate-500 leading-relaxed">Detection of I/O requests exceeding 15 seconds, identifying storage stalls.</p>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
 </section>
 
 <section class="py-16 px-6 bg-slate-900 text-white">
-    <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-2xl font-bold mb-6">Technical Requirements</h2>
-        <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 inline-block text-left">
-            <div class="flex gap-4 items-center mb-4">
-                <div class="h-10 w-10 rounded-lg bg-blue-500 flex items-center justify-center text-xl">📧</div>
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+        <div class="max-w-md">
+            <h3 class="text-2xl font-bold mb-4 italic text-blue-400 uppercase tracking-tighter">Remediation First</h3>
+            <p class="text-slate-400 text-sm leading-relaxed font-medium">
+                OpsDBA InstantAlerts utilize internal SQL Agent Alerting in the <code>msdb</code> database. We use a proprietary responder that executes a local T-SQL Error Log scrape, ensuring the root cause is included in every outbound notification.
+            </p>
+        </div>
+        <div class="p-8 border border-slate-700 rounded-2xl bg-slate-800/50 flex flex-col gap-4">
+            <div class="flex items-center gap-4">
+                <div class="h-10 w-10 bg-slate-700 rounded flex items-center justify-center text-xl">📧</div>
                 <div>
-                    <h4 class="font-bold">Database Mail Configuration</h4>
-                    <p class="text-sm text-slate-400">InstantAlerts are triggered locally on the monitored instance.</p>
+                    <span class="text-[10px] font-bold text-blue-400 uppercase tracking-widest block mb-1">Architecture Requirement</span>
+                    <p class="text-xs text-slate-300 font-bold">Database Mail Configuration</p>
                 </div>
             </div>
-            <p class="text-sm text-slate-300 leading-relaxed">
-                To ensure zero-latency notification, <strong>Database Mail must be configured</strong> on each monitored SQL Server. This allow the local instance to trigger and transmit the alert immediately upon failure, bypassing centralized polling delays.
-            </p>
+            <p class="text-[11px] text-slate-500 max-w-[250px] leading-relaxed">Monitored instances require Database Mail to ensure zero-latency transmission of internal exceptions.</p>
         </div>
     </div>
 </section>
 
-<footer class="bg-slate-900 text-slate-300 py-12 px-6 border-t border-slate-800">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
-        <div class="md:col-span-2">
-            <a href="index.html" class="flex items-center gap-1 mb-4">
-                <span class="text-2xl font-extrabold tracking-tighter text-white">OpsDBA<span class="text-blue-500">.ai</span></span>
-            </a>
-            <p class="text-slate-400 text-sm leading-relaxed max-w-md mb-6">
-                Proactive SQL Server DBA Support enhanced with next-gen AI agents. We prevent downtime before it happens.
-            </p>
-            <div class="flex flex-col gap-1">
-                <div class="flex items-center gap-2 mt-2">
-                    <div class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></div>
-                    <span class="text-sm font-bold text-white uppercase tracking-widest">Corey Klessig, Principal SQL Server DBA</span>
-                </div>
-            </div>
-        </div>
-        <div class="md:col-span-1 pt-2">
-            <ul class="space-y-4 text-sm">
-                <li><a href="Partners.html" class="hover:text-white transition">Are you a DBA?</a></li>
-                <li><a href="Partners.html" class="hover:text-white transition">Are you a Service Provider?</a></li>
-                <li><a href="Requirements.html" class="hover:text-white transition">Technical Requirements</a></li>
-            </ul>
-        </div>
-        <div class="md:col-span-1 md:text-right pt-2 text-sm">
-            <a href="mailto:support@opsdba.ai" class="font-bold text-white hover:text-blue-400 block mb-1">support@opsdba.ai</a>
-            <p class="text-slate-500">5900 Balcones Drive # 21158<br>Austin, TX 78731</p>
-        </div>
-    </div>
-</footer>
+<div id="shared-footer"></div>
+
+<script>
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('shared-footer').innerHTML = data;
+        });
+</script>
 
 </body>
 </html>
