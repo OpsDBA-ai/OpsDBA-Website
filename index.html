@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OpsDBA | Expert Operational Support DBA Service</title>
-    <meta name="description" content="Get a dedicated Operational SQL Server DBA team for a fraction of the cost. Senior expertise enhanced by next-gen AI agents for proactive monitoring.">
+    
+    <meta name="description" content="Dedicated SQL Server DBA support for a fraction of the cost. 24/7 proactive monitoring, expert remediation, and AI-powered insights to stop downtime before it happens.">
+    <meta name="keywords" content="SQL Server DBA Service, Managed Database Support, Remote DBA Experts, SQL Server Performance Tuning, 24/7 SQL Monitoring, Operational DBA Support">
+
+    <meta property="og:title" content="OpsDBA.ai | Your Dedicated SQL Server Expert Team">
+    <meta property="og:description" content="Don't hire a full-time DBA. Get 24/7 senior-level SQL Server operational support and proactive AI monitoring for one flat monthly fee.">
+    <meta property="og:url" content="https://opsdba.ai/index.html">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="avatar.png?v=1">
+    
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #ffffff; margin: 0; padding: 0; overflow-x: hidden; }
         .ai-gradient { background: linear-gradient(135deg, #70a1d7 0%, #3b82f6 100%); }
@@ -18,7 +25,6 @@
             0%, 100% { transform: translateY(0px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
             50% { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15); }
         }
-        
         .animate-float-subtle { animation: float 8s ease-in-out infinite; }
 
         .glass-shine {
@@ -64,8 +70,8 @@
 
 <header class="pt-20 pb-20 px-6 bg-white text-center relative overflow-hidden">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -z-10"></div>
-    <div class="max-w-5xl mx-auto text-center">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border border-blue-100 bg-white shadow-sm text-blue-600 text-xs font-bold tracking-widest uppercase hover:scale-105 transition-transform cursor-default mx-auto">
+    <div class="max-w-5xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border border-blue-100 bg-white shadow-sm text-blue-600 text-xs font-bold tracking-widest uppercase hover:scale-105 transition-transform cursor-default">
             <span class="relative flex h-2 w-2">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
@@ -102,7 +108,7 @@
 <section id="SummaryReport" class="pb-16 px-6 bg-white overflow-hidden">
     <div class="mt-8 max-w-4xl mx-auto text-center">
         <h2 class="text-3xl font-bold text-slate-900 mb-4">We Watch Your Database So You Don't Have To</h2>
-        <p class="text-slate-500 mb-12">Our OpsDBA database collects your logs, and delivers a clear, actionable summary report.</p>
+        <p class="text-slate-500 mb-12">Our OpsDBA database collects your logs and delivers a clear, actionable summary report.</p>
     </div>
     
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -151,29 +157,16 @@
                         </div>
                         <div class="overflow-hidden border border-slate-100 rounded-sm">
                             <table class="w-full text-left text-[9px]">
-                                <thead class="bg-slate-50 text-slate-500 font-bold border-b border-slate-200">
-                                    <tr>
-                                        <th class="py-1.5 px-2">SERVER</th>
-                                        <th class="py-1.5 px-2">PRI</th>
-                                        <th class="py-1.5 px-2">FINDING</th>
-                                        <th class="py-1.5 px-2 hidden sm:table-cell">DB</th>
-                                        <th class="py-1.5 px-2 hidden sm:table-cell text-right">DETAILS</th>
-                                    </tr>
-                                </thead>
                                 <tbody class="divide-y divide-slate-100">
                                     <tr class="bg-red-50/30">
                                         <td class="py-1.5 px-2 font-medium text-slate-700 border-l-4 border-red-500">SQL01</td>
-                                        <td class="py-1.5 px-2"><span class="bg-red-500 text-white px-1 py-0.5 rounded-full font-bold text-[8px]">1</span></td>
-                                        <td class="py-1.5 px-2 font-bold text-slate-800">Backups Not Performed</td>
-                                        <td class="py-1.5 px-2 hidden sm:table-cell text-slate-600">SystemDB</td>
-                                        <td class="py-1.5 px-2 hidden sm:table-cell text-slate-500 text-right">Last: Dec 31...</td>
+                                        <td class="py-1.5 px-2 font-bold text-slate-800">Backups Not Performed Recently</td>
+                                        <td class="py-1.5 px-2 text-right text-slate-500">Last: Dec 31...</td>
                                     </tr>
                                     <tr class="bg-red-50/30">
                                         <td class="py-1.5 px-2 font-medium text-slate-700 border-l-4 border-red-500">SQL06</td>
-                                        <td class="py-1.5 px-2"><span class="bg-red-500 text-white px-1 py-0.5 rounded-full font-bold text-[8px]">1</span></td>
-                                        <td class="py-1.5 px-2 font-bold text-slate-800">Log Growth Issue</td>
-                                        <td class="py-1.5 px-2 hidden sm:table-cell text-slate-600">Database04</td>
-                                        <td class="py-1.5 px-2 hidden sm:table-cell text-slate-500 text-right">File: 19GB</td>
+                                        <td class="py-1.5 px-2 font-bold text-slate-800">Log Growth Issue Detected</td>
+                                        <td class="py-1.5 px-2 text-right text-slate-500">Drive F: 98% Full</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -201,14 +194,14 @@
                           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                           <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
                         </span>
-                        <span class="text-[8px] bg-red-100 text-red-700 px-2 py-0.5 rounded-full font-bold shadow-sm border border-red-200 uppercase">Critical</span>
+                        <span class="text-[8px] bg-red-100 text-red-700 px-2 py-0.5 rounded-full font-bold shadow-sm border border-red-200">CRITICAL</span>
                     </div>
                     <div class="flex items-center gap-2 mb-2 border-b border-red-50 pb-2">
                         <span class="text-[10px] text-slate-900 font-bold uppercase tracking-wider">OpsDBA Monitor</span>
                     </div>
                     <div class="font-sans text-[10px] text-slate-600 leading-relaxed">
-                        <p class="mb-2">Alert on <strong>SQL03</strong> at <strong>02:14 AM</strong>.</p>
-                        <div class="bg-red-50 border-l-2 border-red-500 p-2">
+                        <p class="mb-2">Alert detected on <strong>SQL03</strong> at <strong>02:14 AM</strong>.</p>
+                        <div class="bg-red-50 border-l-2 border-red-500 p-2 rounded-r-md">
                             <strong class="text-red-900 block mb-0.5">SQL AGENT STOPPED</strong>
                             <p class="text-red-800">Auto-restart attempted. Team notified.</p>
                         </div>
@@ -231,19 +224,19 @@
             <div class="relative bg-emerald-50/30 flex-grow p-4 flex flex-col gap-3">
                  <div class="relative p-3 bg-white rounded-xl border border-slate-200 shadow-md w-full">
                     <div class="font-sans text-[10px] text-slate-600 leading-relaxed">
-                        <p class="mb-2 italic text-slate-400">Analysis for SQL01:</p>
+                        <p class="mb-1 italic text-slate-400">SQL01 Insight:</p>
                         <div class="bg-blue-50 border-l-2 border-blue-500 p-2">
-                            <strong class="text-blue-900 block mb-0.5 uppercase tracking-wide">Error 823 Confirmed</strong>
-                            <p class="text-blue-800">Critical I/O Failure on Drive F:\. Check storage hardware.</p>
+                            <strong class="text-blue-900 block mb-0.5 uppercase tracking-wide">Storage Latency</strong>
+                            <p class="text-blue-800">Confirmed disk I/O bottleneck. Advised storage team.</p>
                         </div>
                     </div>
                 </div>
                 <div class="relative p-3 bg-white rounded-xl border border-slate-200 shadow-md w-full">
                     <div class="font-sans text-[10px] text-slate-600 leading-relaxed">
-                        <p class="mb-2 italic text-slate-400">Analysis for SQL06:</p>
+                        <p class="mb-1 italic text-slate-400">SQL06 Insight:</p>
                         <div class="bg-emerald-50 border-l-2 border-emerald-500 p-2">
-                            <strong class="text-emerald-900 block mb-0.5 uppercase tracking-wide">Index Optimization</strong>
-                            <p class="text-emerald-800">Confirmed fragmentation. Maintenance script scheduled for 1AM.</p>
+                            <strong class="text-emerald-900 block mb-0.5 uppercase tracking-wide">Index Optimized</strong>
+                            <p class="text-emerald-800">Maintenance complete. Performance restored to baseline.</p>
                         </div>
                     </div>
                 </div>
@@ -258,43 +251,17 @@
         <div class="group p-8 rounded-3xl border border-slate-100 bg-white shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
             <div class="h-10 w-10 ai-gradient rounded-lg mb-4 flex items-center justify-center text-white font-bold text-sm">01</div>
             <h3 class="text-xl font-bold text-slate-900 mb-2">We Collect the Data</h3>
-            <p class="text-slate-500 text-sm leading-relaxed">
-                Our OpsDBA engine automatically polls your servers for job status, storage allocations, and critical errors, consolidating everything into a master view.
-            </p>
+            <p class="text-slate-500 text-sm leading-relaxed">Our OpsDBA engine automatically polls your servers for job status and critical errors daily.</p>
         </div>
         <div class="group p-8 rounded-3xl border border-slate-100 bg-white shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
             <div class="h-10 w-10 ai-gradient rounded-lg mb-4 flex items-center justify-center text-white font-bold text-sm">02</div>
             <h3 class="text-xl font-bold text-slate-900 mb-2">We Report the Findings</h3>
-            <p class="text-slate-500 text-sm leading-relaxed">
-                You get a "DBA Summary Report" straight from our team. We transform critical findings into an actionable dashboard for you.
-            </p>
+            <p class="text-slate-500 text-sm leading-relaxed">You get a clear Summary Report. We transform complex logs into an actionable dashboard for you.</p>
         </div>
         <div class="group p-8 rounded-3xl border border-slate-100 bg-white shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
             <div class="h-10 w-10 ai-gradient rounded-lg mb-4 flex items-center justify-center text-white font-bold text-sm">03</div>
             <h3 class="text-xl font-bold text-slate-900 mb-2">We Handle the Alerts</h3>
-            <p class="text-slate-500 text-sm leading-relaxed">
-                When a precision-tuned alert fires, it comes to us. We assess the root cause and provide expert resolution, often before you know there's an issue.
-            </p>
-        </div>
-    </div>
-</section>
-
-<section id="how-it-works" class="py-20 px-6 bg-slate-50 overflow-hidden border-t border-slate-200 text-center">
-    <div class="max-w-4xl mx-auto mb-16">
-        <div class="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-lg text-xs font-bold uppercase tracking-widest mb-4">The OpsDBA Model</div>
-        <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Artificial Intelligence Detects.<br><span class="text-blue-600">We Validate and Resolve.</span></h2>
-        <p class="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">Pure automation misses context. Pure human monitoring is expensive. We use a hybrid approach to give you the best of both worlds.</p>
-    </div>
-    <div class="max-w-5xl mx-auto">
-        <div class="flex flex-col md:flex-row items-start justify-center gap-12 text-left">
-            <div class="flex-1">
-                <h4 class="text-2xl font-bold text-slate-900 mb-2">1. Scan & Analysis</h4>
-                <p class="text-slate-500">Lightweight agents scan your logs and utilize LLMs to parse complex error stacks in seconds.</p>
-            </div>
-            <div class="flex-1">
-                <h4 class="text-2xl font-bold text-slate-900 mb-2">2. Human Validation</h4>
-                <p class="text-slate-500">Principal DBA Corey Klessig reviews findings. You get a verified solution based on 20+ years of experience.</p>
-            </div>
+            <p class="text-slate-500 text-sm leading-relaxed">When an alert fires, we assess the root cause and provide resolution before you even know there's an issue.</p>
         </div>
     </div>
 </section>
@@ -310,9 +277,9 @@
                 <thead>
                     <tr>
                         <th class="py-6 px-4 bg-white border-b border-slate-100 min-w-[250px]"><span class="text-xs font-bold uppercase tracking-widest text-slate-400">Service Tiers</span></th>
-                        <th class="py-6 px-4 bg-white border-b-4 border-emerald-500 text-center min-w-[200px]"><div class="text-lg font-bold text-slate-900">Core</div><div class="text-sm text-slate-500">$750/mo</div></th>
-                        <th class="py-6 px-4 bg-blue-50/50 border-b-4 border-blue-500 text-center min-w-[200px]"><div class="text-lg font-bold text-slate-900">Standard</div><div class="text-sm text-slate-500">$1,250/mo</div></th>
-                        <th class="py-6 px-4 bg-white border-b-4 border-slate-900 text-center min-w-[200px]"><div class="text-lg font-bold text-slate-900">Premier</div><div class="text-sm text-slate-500">$2,500/mo</div></th>
+                        <th class="py-6 px-4 bg-white border-b-4 border-emerald-500 text-center min-w-[150px]"><div class="text-lg font-bold text-slate-900">Core</div><div class="text-sm text-slate-500">$750/mo</div></th>
+                        <th class="py-6 px-4 bg-blue-50/50 border-b-4 border-blue-500 text-center min-w-[150px]"><div class="text-lg font-bold text-slate-900">Standard</div><div class="text-sm text-slate-500">$1,250/mo</div></th>
+                        <th class="py-6 px-4 bg-white border-b-4 border-slate-900 text-center min-w-[150px]"><div class="text-lg font-bold text-slate-900">Premier</div><div class="text-sm text-slate-500">$2,500/mo</div></th>
                     </tr>
                 </thead>
                 <tbody class="text-sm text-slate-600">
@@ -325,8 +292,8 @@
                     <tr>
                         <td class="py-4 px-4 border-b border-slate-100">Summary Report</td>
                         <td class="py-4 px-4 border-b border-slate-100 text-center">Monthly</td>
-                        <td class="py-4 px-4 border-b border-slate-100 text-center font-semibold text-blue-600">Weekly</td>
-                        <td class="py-4 px-4 border-b border-slate-100 text-center font-semibold text-blue-600">Daily</td>
+                        <td class="py-4 px-4 border-b border-slate-100 text-center">Weekly</td>
+                        <td class="py-4 px-4 border-b border-slate-100 text-center">Daily</td>
                     </tr>
                     <tr>
                         <td class="py-4 px-4 border-b border-slate-100">Response Time</td>
@@ -343,10 +310,10 @@
 <footer class="bg-slate-900 text-slate-300 py-12 px-6 border-t border-slate-800">
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
         <div class="md:col-span-2">
-            <a href="#" class="flex items-center gap-1 mb-4">
+            <a href="index.html" class="flex items-center gap-1 mb-4">
                 <span class="text-2xl font-extrabold tracking-tighter text-white">OpsDBA<span class="text-blue-500">.ai</span></span>
             </a>
-            <p class="text-slate-400 text-sm max-w-md mb-6">Proactive SQL Server DBA Support enhanced with next-gen AI agents.</p>
+            <p class="text-slate-400 text-sm leading-relaxed max-w-md mb-6">Proactive SQL Server DBA Support enhanced with next-gen AI agents.</p>
             <div class="flex flex-col gap-1">
                 <span class="text-slate-500 text-xs">&copy; 2026 OpsDBA.ai LLC.</span>
                 <div class="flex items-center gap-2 mt-2">
@@ -357,12 +324,13 @@
         </div>
         <div class="md:col-span-1 pt-2">
             <ul class="space-y-4">
-                <li><a href="Partners.html" class="text-sm font-medium text-slate-400 hover:text-white transition">Are you a DBA?</a></li>
-                <li><a href="Requirements.html" class="text-sm font-medium text-slate-400 hover:text-white transition">Technical Requirements</a></li>
+                <li><a href="Partners.html" class="text-sm font-medium text-slate-400 hover:text-white transition block">Are you a DBA?</a></li>
+                <li><a href="Requirements.html" class="text-sm font-medium text-slate-400 hover:text-white transition block">Technical Requirements</a></li>
             </ul>
         </div>
         <div class="md:col-span-1 md:text-right pt-2">
-            <a href="mailto:support@opsdba.ai" class="text-sm font-bold text-white block mb-1">support@opsdba.ai</a>
+            <a href="mailto:support@opsdba.ai" class="text-sm font-bold text-white hover:text-blue-400 transition block mb-1">support@opsdba.ai</a>
+            <a href="tel:+15122858501" class="text-sm font-medium text-slate-400 hover:text-white block mb-2">+1 (512) 285-8501</a>
             <p class="text-xs text-slate-500 mt-4">Austin, TX 78731</p>
         </div>
     </div>
