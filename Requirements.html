@@ -35,7 +35,7 @@
         <div class="hidden md:flex items-center gap-8">
             <a href="#core" class="text-sm font-semibold text-slate-600 hover:text-blue-600">Infrastructure</a>
             <a href="#security" class="text-sm font-semibold text-slate-600 hover:text-blue-600">Security</a>
-            <a href="#ai" class="text-sm font-semibold text-slate-600 hover:text-blue-600">AI Engine</a>
+            <a href="#ai" class="text-sm font-semibold text-slate-600 hover:text-blue-600">AI Models</a>
         </div>
         <a href="ScheduleMeeting.html" class="bg-blue-600 text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wide hover:bg-blue-700 transition">Schedule Meeting</a>
     </div>
@@ -70,7 +70,8 @@
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                 </div>
                 <h3 class="text-xl font-bold text-slate-900 mb-2">Database Mail</h3>
-                <p class="text-sm text-slate-600 leading-relaxed">Must be configured on the <strong>Master Server</strong> to deliver the Daily DBA Summary Reports. We recommend a dedicated O365 or SendGrid SMTP relay.</p>
+                <p class="text-sm text-slate-600 leading-relaxed mb-4">Database Mail is <strong>required</strong> on all monitored SQL Servers. We deploy custom SQL Server Alerts to each instance that utilize the <strong>OpsDBA Operator</strong> for instant, real-time alert notifications.</p>
+                <p class="text-xs text-slate-500 italic">Recommendation: Use a dedicated O365 or SendGrid SMTP relay.</p>
             </div>
 
             <div class="p-8 rounded-2xl border-2 border-dashed border-emerald-200 bg-emerald-50/30">
@@ -104,17 +105,17 @@
                 <div>
                     <h3 class="text-2xl font-bold text-slate-900 mb-4">Edge-Side Redaction</h3>
                     <p class="text-slate-600 leading-relaxed mb-6">
-                        Our logic identifies PII (Personally Identifiable Information) in your error logs locally. Before sending a log to the AI engine for diagnosis, we scrub:
+                        Our logic identifies sensitive environment metadata locally. Before sending a log to an LLM provider for diagnosis, we scrub:
                     </p>
                     <ul class="space-y-3">
                         <li class="flex items-center gap-3 text-sm text-slate-700 font-medium">
                             <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span> Public & Private IP Addresses
                         </li>
                         <li class="flex items-center gap-3 text-sm text-slate-700 font-medium">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span> Domain & Local Usernames
+                            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span> Usernames, Email Addresses & File Paths
                         </li>
                         <li class="flex items-center gap-3 text-sm text-slate-700 font-medium">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span> Email Addresses & File Paths
+                            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span> Server, Instance & Database Names
                         </li>
                     </ul>
                 </div>
@@ -122,10 +123,10 @@
                     <div class="absolute top-3 right-4 text-[9px] text-slate-600 font-bold uppercase tracking-widest">Local Redaction Logic</div>
                     <div class="space-y-1">
                         <p class="text-slate-500 italic"># Processing Log Stream...</p>
-                        <p><span class="text-red-400">-</span> Login failed for '<strong>CORP\CKlessig</strong>'</p>
+                        <p><span class="text-red-400">-</span> Login failed for '<strong>CORP\CKlessig</strong>' on '<strong>SQL-PROD-01</strong>'</p>
                         <p><span class="text-red-400">-</span> Source IP: <strong>10.0.4.152</strong></p>
                         <div class="my-3 border-t border-slate-800"></div>
-                        <p><span class="text-emerald-400">+</span> Login failed for '<strong>[USER_REDACTED]</strong>'</p>
+                        <p><span class="text-emerald-400">+</span> Login failed for '<strong>[USER_REDACTED]</strong>' on '<strong>[SERVER_REDACTED]</strong>'</p>
                         <p><span class="text-emerald-400">+</span> Source IP: <strong>[IP_REDACTED]</strong></p>
                     </div>
                 </div>
@@ -138,26 +139,40 @@
     <div class="max-w-6xl mx-auto">
         <div class="text-center mb-20">
             <span class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-2 block">Optional Feature</span>
-            <h2 class="text-3xl md:text-5xl font-bold mb-6">AI Diagnostics Configuration</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">The AI engine is disabled by default. If enabled, the <strong>Master Server</strong> requires outbound HTTPS access to your choice of provider.</p>
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">Supported AI Models</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">
+                AI engines are disabled by default. If enabled, the <strong>Master Server</strong> requires outbound HTTPS access to your provider and a <strong>valid API key</strong> is required for authentication.
+            </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-blue-500/50 transition-all">
-                <h4 class="text-blue-400 font-bold mb-2">Google Gemini</h4>
-                <p class="text-xs text-slate-400 leading-relaxed">Recommended for high-volume logs. Leverages a 1M token window for full log ingestion.</p>
+            <div class="bg-white/5 p-6 rounded-2xl border-2 border-blue-500 relative transition-all shadow-lg shadow-blue-500/20">
+                <div class="absolute -top-3 left-6 bg-blue-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Recommended</div>
+                <h4 class="text-blue-400 font-bold mb-2 flex items-center gap-2">Google Gemini</h4>
+                <p class="text-xs text-slate-400 leading-relaxed mb-4">Our primary LLM recommendation following the <strong>Dec 2025 update</strong>. Supports <strong>Gemini 1.5 Pro & Flash</strong> with a massive 2M token window for deep log history.</p>
+                <div class="p-3 bg-blue-500/10 rounded-lg border border-blue-500/20">
+                    <p class="text-[10px] text-blue-200 leading-tight">
+                        <strong>Free Tier:</strong> Includes a <strong>generous free API tier</strong>—perfect for daily SQL error analysis at zero cost.
+                    </p>
+                </div>
             </div>
+
             <div class="bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-emerald-500/50 transition-all">
-                <h4 class="text-emerald-400 font-bold mb-2">OpenAI GPT-4o</h4>
-                <p class="text-xs text-slate-400 leading-relaxed">Standard for complex reasoning. Requires a standard OpenAI API key.</p>
+                <h4 class="text-emerald-400 font-bold mb-2">OpenAI</h4>
+                <p class="text-xs text-slate-400 leading-relaxed mb-4">The industry standard for high-precision logic and multi-step troubleshooting. Connects to the latest <strong>GPT-4o</strong> models.</p>
+                <p class="text-[10px] text-slate-500 font-semibold uppercase tracking-wider">Requires: Valid API Key</p>
             </div>
+
             <div class="bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-sky-500/50 transition-all">
-                <h4 class="text-sky-400 font-bold mb-2">Azure OpenAI</h4>
-                <p class="text-xs text-slate-400 leading-relaxed">For enterprise compliance. Uses your internal private endpoints via Microsoft Copilot logic.</p>
+                <h4 class="text-sky-400 font-bold mb-2">Microsoft Copilot</h4>
+                <p class="text-xs text-slate-400 leading-relaxed mb-4">Enterprise-grade compliance. Access OpenAI LLMs through your private <strong>Azure OpenAI Service</strong> tenant for enhanced data residency.</p>
+                <p class="text-[10px] text-slate-500 font-semibold uppercase tracking-wider">Best for: HIPAA/SOC2</p>
             </div>
+
             <div class="bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-orange-500/50 transition-all">
-                <h4 class="text-orange-400 font-bold mb-2">Ollama (Local)</h4>
-                <p class="text-xs text-slate-400 leading-relaxed">Air-gapped solution. Models run locally on your server. No data leaves the network.</p>
+                <h4 class="text-orange-400 font-bold mb-2">Ollama</h4>
+                <p class="text-xs text-slate-400 leading-relaxed mb-4">The air-gapped solution. Run local LLMs like <strong>Llama 3</strong> or Mistral directly on your server. No data ever leaves your network.</p>
+                <p class="text-[10px] text-slate-500 font-semibold uppercase tracking-wider">No API Key Required</p>
             </div>
         </div>
     </div>
